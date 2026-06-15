@@ -197,195 +197,200 @@
 }
 
 
-/* ======================== THEME: Windows 8 / Metro Flat Design ======================== */
+/* ======================== THEME: Windows 8 / Metro ========================
+   Authentic Metro: a deep-purple Start-screen canvas, bright flat Live
+   Tiles, edge-to-edge color blocks, no chrome (no borders/shadows/
+   gradients), and a bold light-weight Segoe UI typographic hierarchy.
+   Token values live here; structural layout lives in the WIN8 / METRO
+   STRUCTURAL OVERRIDES block further down.
+   =========================================================================== */
 [data-theme="win8"] {
-  /* Page */
-  --bg:       #ffffff;
-  --fg:       #1f1f1f;
+  /* Page — deep purple Start screen */
+  --bg:       #3b0d4d;
+  --fg:       #ffffff;
   --bg-image: none;
   --bg-size:  auto;
   --bg-pos:   0 0;
-  --font-body:    "Segoe UI","Helvetica Neue",Arial,sans-serif;
-  --font-heading: "Segoe UI","Helvetica Neue",Arial,sans-serif;
+  --font-body:    "Segoe UI","Segoe UI Web (West European)",-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --font-heading: "Segoe UI Light","Segoe UI Semilight","Segoe UI",-apple-system,"Helvetica Neue",Arial,sans-serif;
   --font-mono:    "Consolas","Courier New",monospace;
 
   /* Accessibility */
-  --skip-bg:       #0078d7;
+  --skip-bg:       #1ba1e2;
   --skip-color:    #fff;
-  --skip-border:   3px solid #fff;
-  --focus-outline: 4px solid #0078d7;
+  --skip-border:   0;
+  --focus-outline: 3px solid #ffffff;
 
   /* Blink */
-  --blink-hot: #e81123;
+  --blink-hot: #e51400;
 
   /* Topbar / marquee */
-  --topbar-bg:     #171717;
+  --topbar-bg:     #2b0838;
   --topbar-border: none;
-  --marquee-color: #00b4d5;
+  --marquee-color: #1ba1e2;
 
-  /* Construction bar */
-  --construction-stripe:  repeating-linear-gradient(45deg, #0078d7 0 18px, #005a9e 18px 36px);
-  --construction-text-bg: #ffffff;
-  --construction-color:   #fff;
+  /* Construction bar — flat amber, no caution stripes */
+  --construction-stripe:  #fa6800;
+  --construction-text-bg: transparent;
+  --construction-color:   #ffffff;
   --construction-shadow:  none;
 
-  /* Header */
-  --header-bg:       #0078d7;
+  /* Header — chrome-less */
+  --header-bg:       transparent;
   --header-border:   none;
   --wordmark-color:  #ffffff;
   --wordmark-shadow: none;
-  --tagline-color:   rgba(255,255,255,.8);
+  --tagline-color:   rgba(255,255,255,.6);
 
-  /* Nav */
+  /* Nav — app-bar style outline tiles + one solid accent CTA */
   --nav-btn-bg:          transparent;
-  --nav-btn-border:      2px solid rgba(255,255,255,.6);
+  --nav-btn-border:      2px solid rgba(255,255,255,.5);
   --nav-btn-color:       #ffffff;
-  --nav-btn-hover-bg:    rgba(255,255,255,.2);
-  --nav-btn-hover-color: #ffffff;
-  --nav-cta-bg:          #ffffff;
-  --nav-cta-color:       #0078d7;
-  --nav-cta-bcolor:      #ffffff;
-  --nav-cta-hover-bg:    rgba(255,255,255,.85);
-  --nav-cta-hover-color: #0078d7;
+  --nav-btn-hover-bg:    #ffffff;
+  --nav-btn-hover-color: #3b0d4d;
+  --nav-cta-bg:          #1ba1e2;
+  --nav-cta-color:       #ffffff;
+  --nav-cta-bcolor:      #1ba1e2;
+  --nav-cta-hover-bg:    #ffffff;
+  --nav-cta-hover-color: #1ba1e2;
 
   /* Section headings */
-  --heading-color:  #1f1f1f;
+  --heading-color:  #ffffff;
   --heading-shadow: none;
 
   /* Hero */
-  --hero-sub-color: #555555;
-  --hero-em-color:  #107c10;
+  --hero-sub-color: rgba(255,255,255,.75);
+  --hero-em-color:  #1ba1e2;
 
-  /* Buttons */
-  --btn-bg:                  #0078d7;
-  --btn-border:              2px solid #0078d7;
+  /* Buttons — Metro outline (default) + solid accent (primary) */
+  --btn-bg:                  transparent;
+  --btn-border:              2px solid #ffffff;
   --btn-color:               #ffffff;
-  --btn-hover-bg:            #005a9e;
-  --btn-hover-color:         #ffffff;
-  --btn-primary-bg:          #107c10;
+  --btn-hover-bg:            #ffffff;
+  --btn-hover-color:         #3b0d4d;
+  --btn-primary-bg:          #60a917;
   --btn-primary-color:       #ffffff;
-  --btn-primary-bcolor:      #107c10;
-  --btn-primary-hover-bg:    #0d6a0d;
+  --btn-primary-bcolor:      #60a917;
+  --btn-primary-hover-bg:    #76b822;
   --btn-primary-hover-color: #ffffff;
 
   /* Screenshot */
-  --screenshot-bg:     #1f1f1f;
-  --screenshot-border: 2px solid #e0e0e0;
-  --screenshot-color:  #00b4d5;
+  --screenshot-bg:     #000000;
+  --screenshot-border: 0;
+  --screenshot-color:  #1ba1e2;
 
-  /* Logo wall */
-  --logowall-h2-color:  #1f1f1f;
+  /* Logo wall (tinted per-tile in the override block) */
+  --logowall-h2-color:  #ffffff;
   --logowall-h2-shadow: none;
-  --powered-color:      #555555;
-  --weblogo-bg:         #744da9;
-  --weblogo-border:     none;
+  --powered-color:      rgba(255,255,255,.75);
+  --weblogo-bg:         #0050ef;
+  --weblogo-border:     0;
   --weblogo-color:      #ffffff;
   --weblogo-shadow:     none;
 
-  /* Feature cards */
-  --feature-bg:       #f2f2f2;
-  --feature-color:    #1f1f1f;
-  --feature-border:   none;
-  --feature-h3-color: #0078d7;
-  --feature-em-color: #107c10;
+  /* Feature Live Tiles (colored per-tile in the override block) */
+  --feature-bg:       #00aba9;
+  --feature-color:    #ffffff;
+  --feature-border:   0;
+  --feature-h3-color: #ffffff;
+  --feature-em-color: #ffffff;
 
-  /* Method section */
-  --method-bg:         #0078d7;
-  --method-border:     none;
+  /* Changelog block */
+  --method-bg:         #2d7d9a;
+  --method-border:     0;
   --method-color:      #ffffff;
-  --method-list-color: rgba(255,255,255,.9);
+  --method-list-color: #ffffff;
 
-  /* Statement */
-  --statement-bg:           #f2f2f2;
-  --statement-color:        #1f1f1f;
-  --statement-border:       4px solid #0078d7;
-  --statement-h2-color:     #1f1f1f;
-  --statement-strong-color: #0078d7;
+  /* Statement — flat cobalt block */
+  --statement-bg:           #0050ef;
+  --statement-color:        #ffffff;
+  --statement-border:       0;
+  --statement-h2-color:     #ffffff;
+  --statement-strong-color: #ffffff;
 
-  /* Numbered sections */
-  --numbered-bg:        #107c10;
-  --numbered-border:    none;
+  /* Numbered hubs (colored per-section by id in the override block) */
+  --numbered-bg:        #00aba9;
+  --numbered-border:    0;
   --numbered-color:     #ffffff;
-  --section-num-color:  rgba(255,255,255,.6);
+  --section-num-color:  rgba(255,255,255,.7);
   --numbered-h2-color:  #ffffff;
   --numbered-h2-shadow: none;
 
-  /* Ingredient accordion */
-  --ingredient-bg:           #f2f2f2;
-  --ingredient-border:       2px solid #e0e0e0;
-  --ingredient-sum-color:    #1f1f1f;
-  --ingredient-marker-color: #0078d7;
-  --ingredient-hover-bg:     #e0e0e0;
-  --ingredient-hover-color:  #1f1f1f;
-  --ingredient-open-bg:      #0078d7;
-  --ingredient-open-color:   #ffffff;
-  --ingredient-open-border:  none;
+  /* Ingredient accordion — translucent tiles on the colored hubs */
+  --ingredient-bg:           rgba(255,255,255,.14);
+  --ingredient-border:       0;
+  --ingredient-sum-color:    #ffffff;
+  --ingredient-marker-color: #ffffff;
+  --ingredient-hover-bg:     rgba(255,255,255,.28);
+  --ingredient-hover-color:  #ffffff;
+  --ingredient-open-bg:      #ffffff;
+  --ingredient-open-color:   #1f1f1f;
+  --ingredient-open-border:  0;
 
-  /* Spec panel */
+  /* Spec panel — light card for readability */
   --spec-bg:        #ffffff;
   --spec-color:     #1f1f1f;
-  --spec-h3-color:  #0078d7;
-  --spec-stub-color:#e81123;
-  --spec-tag-bg:    #0078d7;
+  --spec-h3-color:  #0050ef;
+  --spec-stub-color:#e51400;
+  --spec-tag-bg:    #0050ef;
   --spec-tag-color: #ffffff;
   --spec-fig-bg:    #f2f2f2;
-  --spec-fig-border:2px solid #e0e0e0;
-  --spec-tbl-border:1px solid #e0e0e0;
-  --spec-th-bg:     #0078d7;
+  --spec-fig-border:0;
+  --spec-tbl-border:1px solid #dddddd;
+  --spec-th-bg:     #0050ef;
   --spec-th-color:  #ffffff;
   --spec-td-bg:     #f2f2f2;
 
   /* Testimonials */
-  --testimonial-h2-color:  #1f1f1f;
+  --testimonial-h2-color:  #ffffff;
   --testimonial-h2-shadow: none;
-  --blockquote-bg:         #f2f2f2;
-  --blockquote-color:      #1f1f1f;
-  --blockquote-border:     4px solid #0078d7;
-  --bigquote-color:        #0078d7;
-  --attribution-color:     #0078d7;
-  --speed-badge-color:     #e81123;
+  --blockquote-bg:         #2b0838;
+  --blockquote-color:      #ffffff;
+  --blockquote-border:     0;
+  --bigquote-color:        #1ba1e2;
+  --attribution-color:     #1ba1e2;
+  --speed-badge-color:     #fa6800;
   --speed-badge-shadow:    none;
 
-  /* Final CTA */
-  --cta-bg:          #107c10;
-  --cta-border:      none;
+  /* Final CTA — flat green block */
+  --cta-bg:          #60a917;
+  --cta-border:      0;
   --cta-color:       #ffffff;
-  --fineprint-color: rgba(255,255,255,.6);
+  --fineprint-color: rgba(255,255,255,.65);
 
   /* Footer */
-  --footer-bg:      #171717;
+  --footer-bg:      #2b0838;
   --footer-color:   #ffffff;
   --footer-border:  none;
-  --footer-h4:      #00b4d5;
-  --footer-a:       rgba(255,255,255,.8);
-  --footer-a-hover: #00b4d5;
+  --footer-h4:      #1ba1e2;
+  --footer-a:       rgba(255,255,255,.75);
+  --footer-a-hover: #1ba1e2;
 
   /* Webring */
-  --webring-a:  #00b4d5;
-  --ring-label: #744da9;
+  --webring-a:  #1ba1e2;
+  --ring-label: #fa6800;
 
   /* Hit counter */
-  --counter-bg:     #1f1f1f;
-  --counter-color:  #00b4d5;
-  --counter-border: 1px solid #00b4d5;
+  --counter-bg:     #000000;
+  --counter-color:  #1ba1e2;
+  --counter-border: 0;
 
   /* Best-viewed note */
-  --bestviewed-color: rgba(255,255,255,.7);
-  --bestviewed-a:     #00b4d5;
+  --bestviewed-color: rgba(255,255,255,.65);
+  --bestviewed-a:     #1ba1e2;
 
-  /* New-feature pill */
-  --pill-bg:          #e0e0e0;
-  --pill-color:       #0078d7;
-  --pill-border:      none;
+  /* New-feature pill — flat amber */
+  --pill-bg:          #fa6800;
+  --pill-color:       #ffffff;
+  --pill-border:      0;
   --pill-shadow:      none;
-  --pill-hover-bg:    #0078d7;
-  --pill-hover-color: #ffffff;
+  --pill-hover-bg:    #ffffff;
+  --pill-hover-color: #fa6800;
 
-  /* Rainbow → Metro gradient (no animation) */
-  --rainbow-gradient: linear-gradient(90deg, #0078d7, #107c10, #e81123, #744da9, #ca5010, #00b4d5);
+  /* Rainbow → flat white (Metro has no rainbow); hr hidden in overrides */
+  --rainbow-gradient: #ffffff;
   --rainbow-hr-size:  100% 100%;
 }
-
 
 /* ======================== BASE ======================== */
 html { overflow-x: hidden; }
@@ -843,18 +848,154 @@ footer { background: var(--footer-bg); color: var(--footer-color); border-top: v
   color: var(--btn-hover-color);
 }
 
-/* ======================== WIN8 OVERRIDES ======================== */
-/* Properties that can't be expressed as a simple value variable */
+/* ============================================================
+   WIN8 / METRO STRUCTURAL OVERRIDES
+   Beyond token swaps: Metro restructures the layout into
+   edge-to-edge color blocks, a Live Tile grid, and a bold
+   light-weight typographic hierarchy. CSS-only, so the HTML
+   stays shared between both themes.
+   ============================================================ */
 
-/* Kill the animated gradient — Metro uses flat static color bands */
-[data-theme="win8"] .rainbow-hr { animation: none; }
+/* ---- Typography: light-weight Segoe UI hierarchy ---- */
+[data-theme="win8"] h1,
+[data-theme="win8"] h2,
+[data-theme="win8"] h3,
+[data-theme="win8"] h4 { font-weight: 300; letter-spacing: -0.5px; }
 
-/* Construction pill: white bg, dark text (parent color is white for stripe contrast) */
-[data-theme="win8"] .construction-text { color: #0078d7; }
+/* ---- Edge-to-edge: drop the centered column; blocks bleed to edges ---- */
+[data-theme="win8"] main { max-width: none; margin: 0; padding: 0; }
+[data-theme="win8"] section { margin: 0; padding: 56px 8%; }
 
-/* Flat active state — no 3D inset borders */
+/* Metro has no decorative dividers; the rainbow text becomes flat white */
+[data-theme="win8"] .rainbow-hr { display: none; }
+[data-theme="win8"] .rainbow { -webkit-text-fill-color: #ffffff; color: #ffffff; }
+
+/* ---- Construction bar: flat amber, white text ---- */
+[data-theme="win8"] .construction-text { color: #ffffff; }
+
+/* ---- Header / nav: chrome-less, left-aligned app-bar tiles ---- */
+[data-theme="win8"] header { padding: 18px 8%; }
+[data-theme="win8"] .wordmark { letter-spacing: -1px; }
+[data-theme="win8"] .navlist { justify-content: flex-start; }
+[data-theme="win8"] .navlist a { font-weight: 400; }
+
+/* ---- Hero: massive, left-aligned, light-weight title ---- */
+[data-theme="win8"] .hero { text-align: left; padding-top: 40px; padding-bottom: 40px; }
+[data-theme="win8"] .hero h1 {
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  font-weight: 200;
+  line-height: 1.04;
+  margin: 0 0 18px;
+  max-width: 16ch;
+}
+[data-theme="win8"] .hero-sub { margin: 0 0 24px; font-size: 1.35rem; font-weight: 300; max-width: 620px; }
+[data-theme="win8"] .cta-row { justify-content: flex-start; }
+[data-theme="win8"] .hero-screenshot { margin-left: 0; }
+
+/* ---- Live Tile grid: feature cards become bold flat tiles ---- */
+[data-theme="win8"] .features { display: flex; flex-wrap: wrap; gap: 10px; }
+[data-theme="win8"] .features h2 { flex-basis: 100%; text-align: left; }
+[data-theme="win8"] .feature {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 300px;
+  max-width: 100%;
+  margin: 0;
+  padding: 24px;
+  box-sizing: border-box;
+}
+[data-theme="win8"] .feature tbody,
+[data-theme="win8"] .feature tr { display: contents; }
+[data-theme="win8"] .feature td { display: block; padding: 0; }
+[data-theme="win8"] .feature-icon { width: auto; text-align: left; font-size: 3rem; margin-bottom: auto; }
+[data-theme="win8"] .feature-body h3 { color: #fff; font-size: 1.7rem; font-weight: 300; margin: 14px 0 8px; }
+[data-theme="win8"] .feature-body p { color: rgba(255,255,255,.9); }
+[data-theme="win8"] .feature:nth-of-type(1) { background: #00aba9; } /* teal   */
+[data-theme="win8"] .feature:nth-of-type(2) { background: #fa6800; } /* orange */
+[data-theme="win8"] .feature:nth-of-type(3) { background: #60a917; } /* lime   */
+
+/* ---- Logo wall: small colored Live Tiles ---- */
+[data-theme="win8"] .logowall { text-align: left; }
+[data-theme="win8"] .badge-grid { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 0; border-spacing: 0; }
+[data-theme="win8"] .badge-grid tbody,
+[data-theme="win8"] .badge-grid tr { display: contents; }
+[data-theme="win8"] .badge-grid td { display: block; padding: 0; }
+[data-theme="win8"] .weblogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 90px;
+  max-width: 100%;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+[data-theme="win8"] .badge-grid td:nth-of-type(1) .weblogo { background: #0050ef; } /* cobalt */
+[data-theme="win8"] .badge-grid td:nth-of-type(2) .weblogo { background: #e51400; } /* red    */
+[data-theme="win8"] .badge-grid td:nth-of-type(3) .weblogo { background: #00aba9; } /* teal   */
+[data-theme="win8"] .badge-grid td:nth-of-type(4) .weblogo { background: #f0a30a; } /* amber  */
+
+/* ---- Statement: flat cobalt block, left-aligned big light type ---- */
+[data-theme="win8"] .statement { text-align: left; }
+[data-theme="win8"] .statement h2 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 200; line-height: 1.2; max-width: 26ch; }
+
+/* ---- Numbered sections: panoramic colored hubs ---- */
+[data-theme="win8"] .numbered { text-align: left; }
+[data-theme="win8"] .section-num {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+[data-theme="win8"] .numbered h2 { font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 200; line-height: 1.05; margin-bottom: 18px; }
+[data-theme="win8"] .section-desc { margin: 0 0 16px; font-size: 1.2rem; font-weight: 300; max-width: 60ch; }
+[data-theme="win8"] #intake  { background: #00aba9; } /* teal    */
+[data-theme="win8"] #plan    { background: #0050ef; } /* cobalt  */
+[data-theme="win8"] #build   { background: #6a00ff; } /* indigo  */
+[data-theme="win8"] #diffs   { background: #d80073; } /* magenta */
+[data-theme="win8"] #monitor { background: #008a00; } /* emerald */
+
+/* ---- Ingredient accordion: flat translucent rows ---- */
+[data-theme="win8"] .ingredients { margin: 0; }
+[data-theme="win8"] .ingredient > summary { font-family: var(--font-body); font-weight: 400; }
+
+/* ---- Changelog: left-aligned flat block ---- */
+[data-theme="win8"] .method { text-align: left; }
+[data-theme="win8"] .method h2 { text-align: left; }
+[data-theme="win8"] .method-list { font-weight: 300; }
+
+/* ---- Testimonials: flat tiles with accent rule ---- */
+[data-theme="win8"] .testimonial { text-align: left; }
+[data-theme="win8"] .testimonial h2 { text-align: left; }
+[data-theme="win8"] .testimonial blockquote {
+  max-width: none;
+  border-left: 6px solid #1ba1e2;
+  font-style: normal;
+  font-weight: 300;
+}
+
+/* ---- Final CTA: flat green block, left-aligned ---- */
+[data-theme="win8"] .final-cta { text-align: left; }
+[data-theme="win8"] .final-cta h2 { font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 200; text-align: left; }
+[data-theme="win8"] .final-cta .cta-row { justify-content: flex-start; }
+/* Primary button is green; on the green CTA block it needs to invert to stay visible */
+[data-theme="win8"] .final-cta .btn-primary { background: #ffffff; color: #60a917; border-color: #ffffff; }
+[data-theme="win8"] .final-cta .btn-primary:hover { background: rgba(255,255,255,.85); color: #60a917; }
+
+/* ---- Footer ---- */
+[data-theme="win8"] footer { padding: 48px 8%; }
+[data-theme="win8"] .footer-grid h4 { font-weight: 400; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; }
+
+/* ---- Theme toggle: a small flat accent tile ---- */
+[data-theme="win8"] #theme-toggle { background: #1ba1e2; border: 0; color: #fff; }
+[data-theme="win8"] #theme-toggle:hover { background: #fff; color: #1ba1e2; }
+
+/* ---- Flat active states — no 3D inset borders ---- */
 [data-theme="win8"] .btn99:active,
-[data-theme="win8"] #theme-toggle:active { border-style: solid; background: var(--btn-hover-bg); }
+[data-theme="win8"] #theme-toggle:active { border-style: solid; }
 [data-theme="win8"] .navlist a:active { border-style: solid; }
 
 /* ============================================================
