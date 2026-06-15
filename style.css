@@ -1,0 +1,319 @@
+/* ============================================================
+   RETRO LINEAR (tm) - GeoCities Edition stylesheet
+   Keep Linear's content. Ruin Linear's aesthetic.
+   ============================================================ */
+
+/* ---------- Base / the crime scene ---------- */
+body {
+  margin: 0;
+  font-family: "Comic Sans MS", "Comic Sans", "Chalkboard SE", cursive, sans-serif;
+  color: #ffff00;                 /* hazard yellow text */
+  background-color: #000080;      /* classic navy */
+  /* Tiled "starfield" made of pure CSS - no external images, works offline */
+  background-image:
+    radial-gradient(white 1px, transparent 1.5px),
+    radial-gradient(#00ffff 1px, transparent 1.5px);
+  background-size: 40px 40px, 70px 70px;
+  background-position: 0 0, 20px 35px;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+/* ---------- Accessibility helpers ---------- */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: #ffff00;
+  color: #000;
+  padding: 8px 14px;
+  font-weight: bold;
+  z-index: 999;
+  border: 3px solid #ff0000;
+}
+.skip-link:focus { left: 8px; top: 8px; }
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0;
+}
+
+a:focus-visible,
+.btn99:focus-visible {
+  outline: 4px dashed #00ff00;
+  outline-offset: 2px;
+}
+
+/* ---------- BLINK (tamed for a11y) ---------- */
+.blink { animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.blink.hot { color: #ff0000; font-weight: bold; }
+
+/* ---------- Marquees (CSS, so reduced-motion can stop them) ---------- */
+.topbar {
+  background: #000;
+  border-top: 3px ridge #00ff00;
+  border-bottom: 3px ridge #00ff00;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.marquee {
+  display: inline-flex;
+  white-space: nowrap;
+  color: #00ff00;
+  font-weight: bold;
+  padding: 4px 0;
+  animation: scrollLeft 30s linear infinite;
+}
+.marquee span { padding-right: 2rem; }
+@keyframes scrollLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ---------- Under construction ---------- */
+.construction {
+  background: repeating-linear-gradient(45deg, #ffcc00 0 18px, #000 18px 36px);
+  color: #000;
+  text-align: center;
+  padding: 6px;
+  font-weight: bold;
+  text-shadow: 0 0 2px #fff, 0 0 2px #fff;
+}
+.construction-text {
+  background: #ffcc00;
+  padding: 2px 8px;
+  display: inline-block;
+}
+
+/* ---------- Header / logo bar / nav ---------- */
+header {
+  background: #c0c0c0;            /* win95 silver */
+  border-bottom: 4px double #ff00ff;
+  padding: 8px;
+}
+.logobar { width: 100%; }
+.logo-cell { white-space: nowrap; }
+.logo-orb { font-size: 2.2rem; vertical-align: middle; }
+.wordmark {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #800080;
+  text-shadow: 2px 2px 0 #ff00ff, 4px 4px 0 #00ffff;
+  vertical-align: middle;
+}
+.tagline-cell {
+  text-align: right;
+  color: #000080;
+  font-style: italic;
+}
+
+.navlist {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+.navlist a {
+  display: block;
+  background: linear-gradient(#fff, #d4d0c8);
+  border: 2px outset #fff;
+  color: #000080;
+  padding: 4px 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.navlist a:hover { background: #ffff00; color: #ff0000; }
+.navlist a:active { border-style: inset; }
+.nav-cta a { background: linear-gradient(#ff66cc, #cc0066); color: #fff; border-color: #ff99dd; }
+.nav-cta a:hover { background: #ffff00; color: #cc0066; }
+
+/* ---------- Layout ---------- */
+main { max-width: 900px; margin: 0 auto; padding: 0 10px; }
+section { margin: 24px 0; }
+
+h1, h2, h3, h4 { font-family: "Times New Roman", Times, serif; }
+
+/* ---------- Rainbow text + dividers ---------- */
+.rainbow {
+  background: linear-gradient(90deg,#ff0000,#ff9900,#ffff00,#00ff00,#00ffff,#0000ff,#ff00ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+}
+.rainbow-hr {
+  height: 8px;
+  border: 0;
+  margin: 18px 0;
+  background: linear-gradient(90deg,#ff0000,#ff9900,#ffff00,#00ff00,#00ffff,#0000ff,#ff00ff,#ff0000);
+  background-size: 200% 100%;
+  animation: hueShift 6s linear infinite;
+}
+@keyframes hueShift { to { background-position: 200% 0; } }
+
+/* ---------- Hero ---------- */
+.hero { text-align: center; }
+.hero h1 { font-size: 2.6rem; margin: 18px 0 6px; }
+.hero-sub { font-size: 1.2rem; color: #ffffff; max-width: 640px; margin: 0 auto 16px; }
+.hero-sub em { color: #00ff00; font-weight: bold; }
+
+.cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 16px 0; }
+
+.btn99 {
+  display: inline-block;
+  background: linear-gradient(#f4f4f4, #c0c0c0);
+  border: 3px outset #ffffff;
+  color: #000080;
+  padding: 10px 18px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-weight: bold;
+  font-size: 1.05rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn99:hover { background: #ffff00; color: #ff0000; }
+.btn99:active { border-style: inset; }
+.btn-primary { background: linear-gradient(#66ff66, #009900); color: #000; border-color: #ccffcc; }
+.btn-primary:hover { background: #ffff00; color: #cc0000; }
+.btn-big { font-size: 1.4rem; padding: 16px 28px; }
+
+/* ---------- ASCII screenshot ---------- */
+.hero-screenshot {
+  background: #000;
+  border: 4px ridge #00ff00;
+  padding: 10px;
+  margin: 20px auto;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.hero-screenshot pre {
+  color: #00ff00;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  margin: 0;
+  display: inline-block;
+  text-align: left;
+}
+
+/* ---------- Logo wall ---------- */
+.logowall { text-align: center; }
+.logowall h2 { color: #ffff00; text-shadow: 2px 2px 0 #ff00ff; }
+.powered { color: #fff; }
+.badge-grid { margin: 12px auto; border-collapse: separate; border-spacing: 10px; }
+.weblogo {
+  display: inline-block;
+  background: #000;
+  border: 3px outset #888;
+  color: #00ffff;
+  font-family: "Times New Roman", serif;
+  font-style: italic;
+  font-weight: bold;
+  padding: 8px 14px;
+  text-shadow: 1px 1px 0 #ff00ff;
+}
+
+/* ---------- Features ---------- */
+.features h2, .method h2, .final-cta h2 { text-align: center; color: #ffff00; text-shadow: 2px 2px 0 #ff0000; }
+.feature {
+  width: 100%;
+  background: #ffffcc;
+  color: #000080;
+  border: 4px ridge #ff00ff;
+  margin: 16px 0;
+}
+.feature td { padding: 14px; vertical-align: middle; }
+.feature-icon { font-size: 3.5rem; text-align: center; width: 120px; }
+.feature-body h3 { margin: 0 0 6px; color: #cc0066; font-size: 1.5rem; }
+.feature-body p { margin: 0; color: #000080; }
+.feature-body em { color: #cc0066; }
+
+/* ---------- Method ---------- */
+.method {
+  background: #330066;
+  border: 4px double #ffff00;
+  padding: 16px;
+  color: #ffffff;
+}
+.method p { color: #fff; }
+.method-list { list-style: none; padding: 0; font-weight: bold; color: #00ff00; }
+.method-list li { margin: 6px 0; }
+
+/* ---------- Testimonial ---------- */
+.testimonial { text-align: center; }
+.testimonial blockquote {
+  background: #fff;
+  color: #000080;
+  border: 4px ridge #00ffff;
+  margin: 0 auto;
+  max-width: 620px;
+  padding: 20px;
+  font-style: italic;
+  font-size: 1.25rem;
+}
+.bigquote { font-size: 2.5rem; color: #ff00ff; }
+.testimonial blockquote footer { margin-top: 10px; font-style: normal; font-weight: bold; color: #cc0066; }
+.speed-badge { color: #ffff00; font-weight: bold; font-size: 1.3rem; text-shadow: 1px 1px 0 #ff0000; }
+
+/* ---------- Final CTA ---------- */
+.final-cta { text-align: center; background: #000; border: 4px ridge #ff00ff; padding: 22px; }
+.final-cta p { color: #fff; }
+.fineprint { color: #888 !important; font-size: 0.85rem; }
+
+/* ---------- Footer ---------- */
+footer { background: #c0c0c0; color: #000080; border-top: 4px double #ff00ff; padding: 18px 10px; margin-top: 20px; }
+.footer-grid { margin: 0 auto; }
+.footer-grid td { vertical-align: top; padding: 0 24px; }
+.footer-grid h4 { color: #800080; margin: 0 0 6px; }
+.footer-grid ul { list-style: none; padding: 0; margin: 0; }
+.footer-grid a { color: #000080; }
+.footer-grid a:hover { color: #ff0000; }
+
+.webring { text-align: center; margin: 16px 0; font-weight: bold; }
+.webring a { color: #0000ee; }
+.ring-label { color: #800080; margin: 0 12px; }
+
+.counter { text-align: center; }
+.hitcounter span {
+  display: inline-block;
+  background: #000;
+  color: #00ff00;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  padding: 3px 6px;
+  margin: 0 1px;
+  border: 1px solid #00ff00;
+}
+
+.bestviewed { text-align: center; color: #000080; font-size: 0.9rem; }
+.bestviewed a { color: #0000ee; }
+.bestviewed code { background: #fff; padding: 0 4px; }
+
+/* ============================================================
+   ACCESSIBILITY: respect reduced motion (the "bonus points")
+   Kills blink + scrolling marquees + hue shifts for anyone who
+   asked their OS to reduce motion.
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .blink,
+  .marquee,
+  .rainbow-hr {
+    animation: none !important;
+  }
+  .blink { opacity: 1 !important; }
+  .marquee { transform: none; }
+}
+
+/* ---------- Mobile-ish reflow (90s sites never did this, but a11y) ---------- */
+@media (max-width: 640px) {
+  .hero h1 { font-size: 1.8rem; }
+  .feature-icon { width: auto; font-size: 2.5rem; }
+  .footer-grid td { display: block; padding: 8px 0; }
+  .tagline-cell { text-align: center; }
+}
