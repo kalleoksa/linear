@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="geocities">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>:::: RETRO LINEAR (tm) :::: The Product Devlopment System for Teams and Agents ::::</title>
   <meta name="description" content="Retro Linear - the product development system for teams and agents. Purpose-built for planning and building products. Designed for the A.I. era. Best viewed in Netscape Navigator." />
   <link rel="stylesheet" href="style.css" />
+  <!-- Restore saved theme before first paint to avoid flash -->
+  <script>
+    (function(){var t=localStorage.getItem('linear-theme');if(t==='win8'||t==='geocities')document.documentElement.setAttribute('data-theme',t);})();
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -418,5 +422,30 @@
       <a href="https://linear.app">linear.app</a>.
     </p>
   </footer>
+
+  <!-- Theme toggle button -->
+  <button id="theme-toggle" aria-label="Switch visual theme">Switch to Win8</button>
+
+  <script>
+    (function () {
+      var html = document.documentElement;
+      var btn = document.getElementById('theme-toggle');
+
+      function updateLabel() {
+        btn.textContent = html.getAttribute('data-theme') === 'win8'
+          ? 'Switch to GeoCities'
+          : 'Switch to Win8';
+      }
+
+      updateLabel();
+
+      btn.addEventListener('click', function () {
+        var next = html.getAttribute('data-theme') === 'win8' ? 'geocities' : 'win8';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('linear-theme', next);
+        updateLabel();
+      });
+    })();
+  </script>
 </body>
 </html>

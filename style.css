@@ -1,38 +1,419 @@
 /* ============================================================
-   RETRO LINEAR (tm) - GeoCities Edition stylesheet
-   Keep Linear's content. Ruin Linear's aesthetic.
+   RETRO LINEAR (tm) — Multi-theme stylesheet
+   Theme 1: GeoCities  (data-theme="geocities", default)
+   Theme 2: Windows 8  (data-theme="win8")
+   Switch by toggling data-theme on <html>; the toggle button
+   in the corner persists the choice to localStorage.
    ============================================================ */
 
-/* ---------- Base / the crime scene ---------- */
+/* ======================== THEME: GeoCities (default) ======================== */
+:root {
+  /* Page */
+  --bg:       #000080;
+  --fg:       #ffff00;
+  --bg-image: radial-gradient(white 1px, transparent 1.5px),
+              radial-gradient(#00ffff 1px, transparent 1.5px);
+  --bg-size:  40px 40px, 70px 70px;
+  --bg-pos:   0 0, 20px 35px;
+  --font-body:    "Comic Sans MS","Comic Sans","Chalkboard SE",cursive,sans-serif;
+  --font-heading: "Times New Roman",Times,serif;
+  --font-mono:    "Courier New",monospace;
+
+  /* Accessibility */
+  --skip-bg:       #ffff00;
+  --skip-color:    #000;
+  --skip-border:   3px solid #ff0000;
+  --focus-outline: 4px dashed #00ff00;
+
+  /* Blink */
+  --blink-hot: #ff0000;
+
+  /* Topbar / marquee */
+  --topbar-bg:     #000;
+  --topbar-border: 3px ridge #00ff00;
+  --marquee-color: #00ff00;
+
+  /* Construction bar */
+  --construction-stripe:  repeating-linear-gradient(45deg, #ffcc00 0 18px, #000 18px 36px);
+  --construction-text-bg: #ffcc00;
+  --construction-color:   #000;
+  --construction-shadow:  0 0 2px #fff, 0 0 2px #fff;
+
+  /* Header */
+  --header-bg:       #c0c0c0;
+  --header-border:   4px double #ff00ff;
+  --wordmark-color:  #800080;
+  --wordmark-shadow: 2px 2px 0 #ff00ff, 4px 4px 0 #00ffff;
+  --tagline-color:   #000080;
+
+  /* Nav */
+  --nav-btn-bg:          linear-gradient(#fff, #d4d0c8);
+  --nav-btn-border:      2px outset #fff;
+  --nav-btn-color:       #000080;
+  --nav-btn-hover-bg:    #ffff00;
+  --nav-btn-hover-color: #ff0000;
+  --nav-cta-bg:          linear-gradient(#ff66cc, #cc0066);
+  --nav-cta-color:       #fff;
+  --nav-cta-bcolor:      #ff99dd;
+  --nav-cta-hover-bg:    #ffff00;
+  --nav-cta-hover-color: #cc0066;
+
+  /* Section headings */
+  --heading-color:  #ffff00;
+  --heading-shadow: 2px 2px 0 #ff0000;
+
+  /* Hero */
+  --hero-sub-color: #ffffff;
+  --hero-em-color:  #00ff00;
+
+  /* Buttons */
+  --btn-bg:                  linear-gradient(#f4f4f4, #c0c0c0);
+  --btn-border:              3px outset #ffffff;
+  --btn-color:               #000080;
+  --btn-hover-bg:            #ffff00;
+  --btn-hover-color:         #ff0000;
+  --btn-primary-bg:          linear-gradient(#66ff66, #009900);
+  --btn-primary-color:       #000;
+  --btn-primary-bcolor:      #ccffcc;
+  --btn-primary-hover-bg:    #ffff00;
+  --btn-primary-hover-color: #cc0000;
+
+  /* Screenshot */
+  --screenshot-bg:     #000;
+  --screenshot-border: 4px ridge #00ff00;
+  --screenshot-color:  #00ff00;
+
+  /* Logo wall */
+  --logowall-h2-color:  #ffff00;
+  --logowall-h2-shadow: 2px 2px 0 #ff00ff;
+  --powered-color:      #fff;
+  --weblogo-bg:         #000;
+  --weblogo-border:     3px outset #888;
+  --weblogo-color:      #00ffff;
+  --weblogo-shadow:     1px 1px 0 #ff00ff;
+
+  /* Feature cards */
+  --feature-bg:       #ffffcc;
+  --feature-color:    #000080;
+  --feature-border:   4px ridge #ff00ff;
+  --feature-h3-color: #cc0066;
+  --feature-em-color: #cc0066;
+
+  /* Method section */
+  --method-bg:         #330066;
+  --method-border:     4px double #ffff00;
+  --method-color:      #ffffff;
+  --method-list-color: #00ff00;
+
+  /* Statement */
+  --statement-bg:           #ffffcc;
+  --statement-color:        #000080;
+  --statement-border:       4px ridge #00ffff;
+  --statement-h2-color:     #000080;
+  --statement-strong-color: #cc0066;
+
+  /* Numbered sections */
+  --numbered-bg:        #330066;
+  --numbered-border:    4px double #ffff00;
+  --numbered-color:     #ffffff;
+  --section-num-color:  #00ff00;
+  --numbered-h2-color:  #ffff00;
+  --numbered-h2-shadow: 2px 2px 0 #ff0000;
+
+  /* Ingredient accordion */
+  --ingredient-bg:           linear-gradient(#fff, #d4d0c8);
+  --ingredient-border:       2px outset #fff;
+  --ingredient-sum-color:    #000080;
+  --ingredient-marker-color: #cc0066;
+  --ingredient-hover-bg:     #ffff00;
+  --ingredient-hover-color:  #ff0000;
+  --ingredient-open-bg:      #000080;
+  --ingredient-open-color:   #ffff00;
+  --ingredient-open-border:  2px solid #ff00ff;
+
+  /* Spec panel */
+  --spec-bg:        #ffffff;
+  --spec-color:     #000080;
+  --spec-h3-color:  #cc0066;
+  --spec-stub-color:#aa0000;
+  --spec-tag-bg:    #000;
+  --spec-tag-color: #00ff00;
+  --spec-fig-bg:    #ffffcc;
+  --spec-fig-border:2px ridge #00ffff;
+  --spec-tbl-border:1px solid #000080;
+  --spec-th-bg:     #000080;
+  --spec-th-color:  #ffff00;
+  --spec-td-bg:     #ffffcc;
+
+  /* Testimonials */
+  --testimonial-h2-color:  #ffff00;
+  --testimonial-h2-shadow: 2px 2px 0 #ff00ff;
+  --blockquote-bg:         #fff;
+  --blockquote-color:      #000080;
+  --blockquote-border:     4px ridge #00ffff;
+  --bigquote-color:        #ff00ff;
+  --attribution-color:     #cc0066;
+  --speed-badge-color:     #ffff00;
+  --speed-badge-shadow:    1px 1px 0 #ff0000;
+
+  /* Final CTA */
+  --cta-bg:          #000;
+  --cta-border:      4px ridge #ff00ff;
+  --cta-color:       #fff;
+  --fineprint-color: #888;
+
+  /* Footer */
+  --footer-bg:      #c0c0c0;
+  --footer-color:   #000080;
+  --footer-border:  4px double #ff00ff;
+  --footer-h4:      #800080;
+  --footer-a:       #000080;
+  --footer-a-hover: #ff0000;
+
+  /* Webring */
+  --webring-a:  #0000ee;
+  --ring-label: #800080;
+
+  /* Hit counter */
+  --counter-bg:     #000;
+  --counter-color:  #00ff00;
+  --counter-border: 1px solid #00ff00;
+
+  /* Best-viewed note */
+  --bestviewed-color: #000080;
+  --bestviewed-a:     #0000ee;
+
+  /* New-feature pill */
+  --pill-bg:          #000;
+  --pill-color:       #00ffff;
+  --pill-border:      2px outset #888;
+  --pill-shadow:      1px 1px 0 #ff00ff;
+  --pill-hover-bg:    #ffff00;
+  --pill-hover-color: #ff0000;
+
+  /* Rainbow gradient (text + hr) */
+  --rainbow-gradient: linear-gradient(90deg,#ff0000,#ff9900,#ffff00,#00ff00,#00ffff,#0000ff,#ff00ff);
+  --rainbow-hr-size:  200% 100%;
+}
+
+
+/* ======================== THEME: Windows 8 / Metro Flat Design ======================== */
+[data-theme="win8"] {
+  /* Page */
+  --bg:       #ffffff;
+  --fg:       #1f1f1f;
+  --bg-image: none;
+  --bg-size:  auto;
+  --bg-pos:   0 0;
+  --font-body:    "Segoe UI","Helvetica Neue",Arial,sans-serif;
+  --font-heading: "Segoe UI","Helvetica Neue",Arial,sans-serif;
+  --font-mono:    "Consolas","Courier New",monospace;
+
+  /* Accessibility */
+  --skip-bg:       #0078d7;
+  --skip-color:    #fff;
+  --skip-border:   3px solid #fff;
+  --focus-outline: 4px solid #0078d7;
+
+  /* Blink */
+  --blink-hot: #e81123;
+
+  /* Topbar / marquee */
+  --topbar-bg:     #171717;
+  --topbar-border: none;
+  --marquee-color: #00b4d5;
+
+  /* Construction bar */
+  --construction-stripe:  repeating-linear-gradient(45deg, #0078d7 0 18px, #005a9e 18px 36px);
+  --construction-text-bg: #ffffff;
+  --construction-color:   #fff;
+  --construction-shadow:  none;
+
+  /* Header */
+  --header-bg:       #0078d7;
+  --header-border:   none;
+  --wordmark-color:  #ffffff;
+  --wordmark-shadow: none;
+  --tagline-color:   rgba(255,255,255,.8);
+
+  /* Nav */
+  --nav-btn-bg:          transparent;
+  --nav-btn-border:      2px solid rgba(255,255,255,.6);
+  --nav-btn-color:       #ffffff;
+  --nav-btn-hover-bg:    rgba(255,255,255,.2);
+  --nav-btn-hover-color: #ffffff;
+  --nav-cta-bg:          #ffffff;
+  --nav-cta-color:       #0078d7;
+  --nav-cta-bcolor:      #ffffff;
+  --nav-cta-hover-bg:    rgba(255,255,255,.85);
+  --nav-cta-hover-color: #0078d7;
+
+  /* Section headings */
+  --heading-color:  #1f1f1f;
+  --heading-shadow: none;
+
+  /* Hero */
+  --hero-sub-color: #555555;
+  --hero-em-color:  #107c10;
+
+  /* Buttons */
+  --btn-bg:                  #0078d7;
+  --btn-border:              2px solid #0078d7;
+  --btn-color:               #ffffff;
+  --btn-hover-bg:            #005a9e;
+  --btn-hover-color:         #ffffff;
+  --btn-primary-bg:          #107c10;
+  --btn-primary-color:       #ffffff;
+  --btn-primary-bcolor:      #107c10;
+  --btn-primary-hover-bg:    #0d6a0d;
+  --btn-primary-hover-color: #ffffff;
+
+  /* Screenshot */
+  --screenshot-bg:     #1f1f1f;
+  --screenshot-border: 2px solid #e0e0e0;
+  --screenshot-color:  #00b4d5;
+
+  /* Logo wall */
+  --logowall-h2-color:  #1f1f1f;
+  --logowall-h2-shadow: none;
+  --powered-color:      #555555;
+  --weblogo-bg:         #744da9;
+  --weblogo-border:     none;
+  --weblogo-color:      #ffffff;
+  --weblogo-shadow:     none;
+
+  /* Feature cards */
+  --feature-bg:       #f2f2f2;
+  --feature-color:    #1f1f1f;
+  --feature-border:   none;
+  --feature-h3-color: #0078d7;
+  --feature-em-color: #107c10;
+
+  /* Method section */
+  --method-bg:         #0078d7;
+  --method-border:     none;
+  --method-color:      #ffffff;
+  --method-list-color: rgba(255,255,255,.9);
+
+  /* Statement */
+  --statement-bg:           #f2f2f2;
+  --statement-color:        #1f1f1f;
+  --statement-border:       4px solid #0078d7;
+  --statement-h2-color:     #1f1f1f;
+  --statement-strong-color: #0078d7;
+
+  /* Numbered sections */
+  --numbered-bg:        #107c10;
+  --numbered-border:    none;
+  --numbered-color:     #ffffff;
+  --section-num-color:  rgba(255,255,255,.6);
+  --numbered-h2-color:  #ffffff;
+  --numbered-h2-shadow: none;
+
+  /* Ingredient accordion */
+  --ingredient-bg:           #f2f2f2;
+  --ingredient-border:       2px solid #e0e0e0;
+  --ingredient-sum-color:    #1f1f1f;
+  --ingredient-marker-color: #0078d7;
+  --ingredient-hover-bg:     #e0e0e0;
+  --ingredient-hover-color:  #1f1f1f;
+  --ingredient-open-bg:      #0078d7;
+  --ingredient-open-color:   #ffffff;
+  --ingredient-open-border:  none;
+
+  /* Spec panel */
+  --spec-bg:        #ffffff;
+  --spec-color:     #1f1f1f;
+  --spec-h3-color:  #0078d7;
+  --spec-stub-color:#e81123;
+  --spec-tag-bg:    #0078d7;
+  --spec-tag-color: #ffffff;
+  --spec-fig-bg:    #f2f2f2;
+  --spec-fig-border:2px solid #e0e0e0;
+  --spec-tbl-border:1px solid #e0e0e0;
+  --spec-th-bg:     #0078d7;
+  --spec-th-color:  #ffffff;
+  --spec-td-bg:     #f2f2f2;
+
+  /* Testimonials */
+  --testimonial-h2-color:  #1f1f1f;
+  --testimonial-h2-shadow: none;
+  --blockquote-bg:         #f2f2f2;
+  --blockquote-color:      #1f1f1f;
+  --blockquote-border:     4px solid #0078d7;
+  --bigquote-color:        #0078d7;
+  --attribution-color:     #0078d7;
+  --speed-badge-color:     #e81123;
+  --speed-badge-shadow:    none;
+
+  /* Final CTA */
+  --cta-bg:          #107c10;
+  --cta-border:      none;
+  --cta-color:       #ffffff;
+  --fineprint-color: rgba(255,255,255,.6);
+
+  /* Footer */
+  --footer-bg:      #171717;
+  --footer-color:   #ffffff;
+  --footer-border:  none;
+  --footer-h4:      #00b4d5;
+  --footer-a:       rgba(255,255,255,.8);
+  --footer-a-hover: #00b4d5;
+
+  /* Webring */
+  --webring-a:  #00b4d5;
+  --ring-label: #744da9;
+
+  /* Hit counter */
+  --counter-bg:     #1f1f1f;
+  --counter-color:  #00b4d5;
+  --counter-border: 1px solid #00b4d5;
+
+  /* Best-viewed note */
+  --bestviewed-color: rgba(255,255,255,.7);
+  --bestviewed-a:     #00b4d5;
+
+  /* New-feature pill */
+  --pill-bg:          #e0e0e0;
+  --pill-color:       #0078d7;
+  --pill-border:      none;
+  --pill-shadow:      none;
+  --pill-hover-bg:    #0078d7;
+  --pill-hover-color: #ffffff;
+
+  /* Rainbow → Metro gradient (no animation) */
+  --rainbow-gradient: linear-gradient(90deg, #0078d7, #107c10, #e81123, #744da9, #ca5010, #00b4d5);
+  --rainbow-hr-size:  100% 100%;
+}
+
+
+/* ======================== BASE ======================== */
 html { overflow-x: hidden; }
 
 body {
   margin: 0;
-  font-family: "Comic Sans MS", "Comic Sans", "Chalkboard SE", cursive, sans-serif;
-  color: #ffff00;                 /* hazard yellow text */
-  background-color: #000080;      /* classic navy */
-  /* Tiled "starfield" made of pure CSS - no external images, works offline */
-  background-image:
-    radial-gradient(white 1px, transparent 1.5px),
-    radial-gradient(#00ffff 1px, transparent 1.5px);
-  background-size: 40px 40px, 70px 70px;
-  background-position: 0 0, 20px 35px;
+  font-family: var(--font-body);
+  color: var(--fg);
+  background-color: var(--bg);
+  background-image: var(--bg-image);
+  background-size: var(--bg-size);
+  background-position: var(--bg-pos);
   font-size: 17px;
   line-height: 1.5;
-  overflow-x: hidden;            /* no horizontal scroll on mobile */
+  overflow-x: hidden;
 }
 
-/* ---------- Accessibility helpers ---------- */
+/* ======================== ACCESSIBILITY ======================== */
 .skip-link {
   position: absolute;
   left: -9999px;
   top: 0;
-  background: #ffff00;
-  color: #000;
+  background: var(--skip-bg);
+  color: var(--skip-color);
   padding: 8px 14px;
   font-weight: bold;
   z-index: 999;
-  border: 3px solid #ff0000;
+  border: var(--skip-border);
 }
 .skip-link:focus { left: 8px; top: 8px; }
 
@@ -46,27 +427,27 @@ body {
 
 a:focus-visible,
 .btn99:focus-visible {
-  outline: 4px dashed #00ff00;
+  outline: var(--focus-outline);
   outline-offset: 2px;
 }
 
-/* ---------- BLINK (tamed for a11y) ---------- */
+/* ======================== BLINK ======================== */
 .blink { animation: blink 1s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
-.blink.hot { color: #ff0000; font-weight: bold; }
+.blink.hot { color: var(--blink-hot); font-weight: bold; }
 
-/* ---------- Marquees (CSS, so reduced-motion can stop them) ---------- */
+/* ======================== TOPBAR / MARQUEE ======================== */
 .topbar {
-  background: #000;
-  border-top: 3px ridge #00ff00;
-  border-bottom: 3px ridge #00ff00;
+  background: var(--topbar-bg);
+  border-top: var(--topbar-border);
+  border-bottom: var(--topbar-border);
   overflow: hidden;
   white-space: nowrap;
 }
 .marquee {
   display: inline-flex;
   white-space: nowrap;
-  color: #00ff00;
+  color: var(--marquee-color);
   font-weight: bold;
   padding: 4px 0;
   animation: scrollLeft 30s linear infinite;
@@ -77,25 +458,25 @@ a:focus-visible,
   to   { transform: translateX(-50%); }
 }
 
-/* ---------- Under construction ---------- */
+/* ======================== CONSTRUCTION BAR ======================== */
 .construction {
-  background: repeating-linear-gradient(45deg, #ffcc00 0 18px, #000 18px 36px);
-  color: #000;
+  background: var(--construction-stripe);
+  color: var(--construction-color);
   text-align: center;
   padding: 6px;
   font-weight: bold;
-  text-shadow: 0 0 2px #fff, 0 0 2px #fff;
+  text-shadow: var(--construction-shadow);
 }
 .construction-text {
-  background: #ffcc00;
+  background: var(--construction-text-bg);
   padding: 2px 8px;
   display: inline-block;
 }
 
-/* ---------- Header / logo bar / nav ---------- */
+/* ======================== HEADER / NAV ======================== */
 header {
-  background: #c0c0c0;            /* win95 silver */
-  border-bottom: 4px double #ff00ff;
+  background: var(--header-bg);
+  border-bottom: var(--header-border);
   padding: 8px;
 }
 .logobar { width: 100%; }
@@ -104,13 +485,13 @@ header {
 .wordmark {
   font-size: 2rem;
   font-weight: bold;
-  color: #800080;
-  text-shadow: 2px 2px 0 #ff00ff, 4px 4px 0 #00ffff;
+  color: var(--wordmark-color);
+  text-shadow: var(--wordmark-shadow);
   vertical-align: middle;
 }
 .tagline-cell {
   text-align: right;
-  color: #000080;
+  color: var(--tagline-color);
   font-style: italic;
 }
 
@@ -125,27 +506,27 @@ header {
 }
 .navlist a {
   display: block;
-  background: linear-gradient(#fff, #d4d0c8);
-  border: 2px outset #fff;
-  color: #000080;
+  background: var(--nav-btn-bg);
+  border: var(--nav-btn-border);
+  color: var(--nav-btn-color);
   padding: 4px 10px;
   text-decoration: none;
   font-weight: bold;
 }
-.navlist a:hover { background: #ffff00; color: #ff0000; }
+.navlist a:hover { background: var(--nav-btn-hover-bg); color: var(--nav-btn-hover-color); }
 .navlist a:active { border-style: inset; }
-.nav-cta a { background: linear-gradient(#ff66cc, #cc0066); color: #fff; border-color: #ff99dd; }
-.nav-cta a:hover { background: #ffff00; color: #cc0066; }
+.nav-cta a { background: var(--nav-cta-bg); color: var(--nav-cta-color); border-color: var(--nav-cta-bcolor); }
+.nav-cta a:hover { background: var(--nav-cta-hover-bg); color: var(--nav-cta-hover-color); }
 
-/* ---------- Layout ---------- */
+/* ======================== LAYOUT ======================== */
 main { max-width: 900px; margin: 0 auto; padding: 0 10px; }
 section { margin: 24px 0; }
 
-h1, h2, h3, h4 { font-family: "Times New Roman", Times, serif; }
+h1, h2, h3, h4 { font-family: var(--font-heading); }
 
-/* ---------- Rainbow text + dividers ---------- */
+/* ======================== RAINBOW ======================== */
 .rainbow {
-  background: linear-gradient(90deg,#ff0000,#ff9900,#ffff00,#00ff00,#00ffff,#0000ff,#ff00ff);
+  background: var(--rainbow-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -155,202 +536,202 @@ h1, h2, h3, h4 { font-family: "Times New Roman", Times, serif; }
   height: 8px;
   border: 0;
   margin: 18px 0;
-  background: linear-gradient(90deg,#ff0000,#ff9900,#ffff00,#00ff00,#00ffff,#0000ff,#ff00ff,#ff0000);
-  background-size: 200% 100%;
+  background: var(--rainbow-gradient);
+  background-size: var(--rainbow-hr-size);
   animation: hueShift 6s linear infinite;
 }
 @keyframes hueShift { to { background-position: 200% 0; } }
 
-/* ---------- Hero ---------- */
+/* ======================== HERO ======================== */
 .hero { text-align: center; }
 .hero h1 { font-size: 2.6rem; margin: 18px 0 6px; }
-.hero-sub { font-size: 1.2rem; color: #ffffff; max-width: 640px; margin: 0 auto 16px; }
-.hero-sub em { color: #00ff00; font-weight: bold; }
+.hero-sub { font-size: 1.2rem; color: var(--hero-sub-color); max-width: 640px; margin: 0 auto 16px; }
+.hero-sub em { color: var(--hero-em-color); font-weight: bold; }
 
 .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 16px 0; }
 
 .btn99 {
   display: inline-block;
-  background: linear-gradient(#f4f4f4, #c0c0c0);
-  border: 3px outset #ffffff;
-  color: #000080;
+  background: var(--btn-bg);
+  border: var(--btn-border);
+  color: var(--btn-color);
   padding: 10px 18px;
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: var(--font-body);
   font-weight: bold;
   font-size: 1.05rem;
   text-decoration: none;
   cursor: pointer;
 }
-.btn99:hover { background: #ffff00; color: #ff0000; }
+.btn99:hover { background: var(--btn-hover-bg); color: var(--btn-hover-color); }
 .btn99:active { border-style: inset; }
-.btn-primary { background: linear-gradient(#66ff66, #009900); color: #000; border-color: #ccffcc; }
-.btn-primary:hover { background: #ffff00; color: #cc0000; }
+.btn-primary { background: var(--btn-primary-bg); color: var(--btn-primary-color); border-color: var(--btn-primary-bcolor); }
+.btn-primary:hover { background: var(--btn-primary-hover-bg); color: var(--btn-primary-hover-color); }
 .btn-big { font-size: 1.4rem; padding: 16px 28px; }
 
-/* ---------- ASCII screenshot ---------- */
+/* ======================== SCREENSHOT ======================== */
 .hero-screenshot {
-  background: #000;
-  border: 4px ridge #00ff00;
+  background: var(--screenshot-bg);
+  border: var(--screenshot-border);
   padding: 10px;
   margin: 20px auto;
   max-width: 100%;
   overflow-x: auto;
 }
 .hero-screenshot pre {
-  color: #00ff00;
-  font-family: "Courier New", monospace;
+  color: var(--screenshot-color);
+  font-family: var(--font-mono);
   font-size: 12px;
   margin: 0;
   display: inline-block;
   text-align: left;
 }
 
-/* ---------- Logo wall ---------- */
+/* ======================== LOGO WALL ======================== */
 .logowall { text-align: center; }
-.logowall h2 { color: #ffff00; text-shadow: 2px 2px 0 #ff00ff; }
-.powered { color: #fff; }
+.logowall h2 { color: var(--logowall-h2-color); text-shadow: var(--logowall-h2-shadow); }
+.powered { color: var(--powered-color); }
 .badge-grid { margin: 12px auto; border-collapse: separate; border-spacing: 10px; }
 .weblogo {
   display: inline-block;
-  background: #000;
-  border: 3px outset #888;
-  color: #00ffff;
-  font-family: "Times New Roman", serif;
+  background: var(--weblogo-bg);
+  border: var(--weblogo-border);
+  color: var(--weblogo-color);
+  font-family: var(--font-heading);
   font-style: italic;
   font-weight: bold;
   padding: 8px 14px;
-  text-shadow: 1px 1px 0 #ff00ff;
+  text-shadow: var(--weblogo-shadow);
 }
 
-/* ---------- Features ---------- */
-.features h2, .method h2, .final-cta h2 { text-align: center; color: #ffff00; text-shadow: 2px 2px 0 #ff0000; }
+/* ======================== FEATURES ======================== */
+.features h2, .method h2, .final-cta h2 { text-align: center; color: var(--heading-color); text-shadow: var(--heading-shadow); }
 .feature {
   width: 100%;
-  background: #ffffcc;
-  color: #000080;
-  border: 4px ridge #ff00ff;
+  background: var(--feature-bg);
+  color: var(--feature-color);
+  border: var(--feature-border);
   margin: 16px 0;
 }
 .feature td { padding: 14px; vertical-align: middle; }
 .feature-icon { font-size: 3.5rem; text-align: center; width: 120px; }
-.feature-body h3 { margin: 0 0 6px; color: #cc0066; font-size: 1.5rem; }
-.feature-body p { margin: 0; color: #000080; }
-.feature-body em { color: #cc0066; }
+.feature-body h3 { margin: 0 0 6px; color: var(--feature-h3-color); font-size: 1.5rem; }
+.feature-body p { margin: 0; color: var(--feature-color); }
+.feature-body em { color: var(--feature-em-color); }
 
-/* ---------- Method ---------- */
+/* ======================== METHOD ======================== */
 .method {
-  background: #330066;
-  border: 4px double #ffff00;
+  background: var(--method-bg);
+  border: var(--method-border);
   padding: 16px;
-  color: #ffffff;
+  color: var(--method-color);
 }
-.method p { color: #fff; }
-.method-list { list-style: none; padding: 0; font-weight: bold; color: #00ff00; }
+.method p { color: var(--method-color); }
+.method-list { list-style: none; padding: 0; font-weight: bold; color: var(--method-list-color); }
 .method-list li { margin: 6px 0; }
 
-/* ---------- Testimonial ---------- */
+/* ======================== TESTIMONIAL ======================== */
 .testimonial { text-align: center; }
 .testimonial blockquote {
-  background: #fff;
-  color: #000080;
-  border: 4px ridge #00ffff;
+  background: var(--blockquote-bg);
+  color: var(--blockquote-color);
+  border: var(--blockquote-border);
   margin: 0 auto;
   max-width: 620px;
   padding: 20px;
   font-style: italic;
   font-size: 1.25rem;
 }
-.bigquote { font-size: 2.5rem; color: #ff00ff; }
-.testimonial blockquote footer { margin-top: 10px; font-style: normal; font-weight: bold; color: #cc0066; }
-.speed-badge { color: #ffff00; font-weight: bold; font-size: 1.3rem; text-shadow: 1px 1px 0 #ff0000; }
+.bigquote { font-size: 2.5rem; color: var(--bigquote-color); }
+.testimonial blockquote footer { margin-top: 10px; font-style: normal; font-weight: bold; color: var(--attribution-color); }
+.speed-badge { color: var(--speed-badge-color); font-weight: bold; font-size: 1.3rem; text-shadow: var(--speed-badge-shadow); }
 
-/* ---------- Final CTA ---------- */
-.final-cta { text-align: center; background: #000; border: 4px ridge #ff00ff; padding: 22px; }
-.final-cta p { color: #fff; }
-.fineprint { color: #888 !important; font-size: 0.85rem; }
+/* ======================== FINAL CTA ======================== */
+.final-cta { text-align: center; background: var(--cta-bg); border: var(--cta-border); padding: 22px; }
+.final-cta p { color: var(--cta-color); }
+.fineprint { color: var(--fineprint-color) !important; font-size: 0.85rem; }
 
-/* ---------- Footer ---------- */
-footer { background: #c0c0c0; color: #000080; border-top: 4px double #ff00ff; padding: 18px 10px; margin-top: 20px; }
+/* ======================== FOOTER ======================== */
+footer { background: var(--footer-bg); color: var(--footer-color); border-top: var(--footer-border); padding: 18px 10px; margin-top: 20px; }
 .footer-grid { margin: 0 auto; }
 .footer-grid td { vertical-align: top; padding: 0 24px; }
-.footer-grid h4 { color: #800080; margin: 0 0 6px; }
+.footer-grid h4 { color: var(--footer-h4); margin: 0 0 6px; }
 .footer-grid ul { list-style: none; padding: 0; margin: 0; }
-.footer-grid a { color: #000080; }
-.footer-grid a:hover { color: #ff0000; }
+.footer-grid a { color: var(--footer-a); }
+.footer-grid a:hover { color: var(--footer-a-hover); }
 
 .webring { text-align: center; margin: 16px 0; font-weight: bold; }
-.webring a { color: #0000ee; }
-.ring-label { color: #800080; margin: 0 12px; }
+.webring a { color: var(--webring-a); }
+.ring-label { color: var(--ring-label); margin: 0 12px; }
 
 .counter { text-align: center; }
 .hitcounter span {
   display: inline-block;
-  background: #000;
-  color: #00ff00;
-  font-family: "Courier New", monospace;
+  background: var(--counter-bg);
+  color: var(--counter-color);
+  font-family: var(--font-mono);
   font-weight: bold;
   padding: 3px 6px;
   margin: 0 1px;
-  border: 1px solid #00ff00;
+  border: var(--counter-border);
 }
 
-.bestviewed { text-align: center; color: #000080; font-size: 0.9rem; }
-.bestviewed a { color: #0000ee; }
+.bestviewed { text-align: center; color: var(--bestviewed-color); font-size: 0.9rem; }
+.bestviewed a { color: var(--bestviewed-a); }
 .bestviewed code { background: #fff; padding: 0 4px; }
 
-/* ---------- Hero "new feature" pill ---------- */
+/* ======================== NEW-FEATURE PILL ======================== */
 .new-feature {
   margin: 8px 0 0;
   font-weight: bold;
 }
 .new-feature a {
-  color: #00ffff;
-  background: #000;
-  border: 2px outset #888;
+  color: var(--pill-color);
+  background: var(--pill-bg);
+  border: var(--pill-border);
   padding: 4px 10px;
   text-decoration: none;
-  text-shadow: 1px 1px 0 #ff00ff;
+  text-shadow: var(--pill-shadow);
 }
-.new-feature a:hover { background: #ffff00; color: #ff0000; }
+.new-feature a:hover { background: var(--pill-hover-bg); color: var(--pill-hover-color); }
 
-/* ---------- "New species" statement ---------- */
+/* ======================== STATEMENT ======================== */
 .statement {
-  background: #ffffcc;
-  color: #000080;
-  border: 4px ridge #00ffff;
+  background: var(--statement-bg);
+  color: var(--statement-color);
+  border: var(--statement-border);
   padding: 18px;
   text-align: center;
 }
 .statement h2 {
   margin: 0;
   font-size: 1.4rem;
-  color: #000080;
+  color: var(--statement-h2-color);
   text-shadow: none;
 }
-.statement strong { color: #cc0066; }
+.statement strong { color: var(--statement-strong-color); }
 
-/* ---------- Numbered product sections (1.0 - 5.0) ---------- */
+/* ======================== NUMBERED SECTIONS ======================== */
 .numbered {
-  background: #330066;
-  border: 4px double #ffff00;
+  background: var(--numbered-bg);
+  border: var(--numbered-border);
   padding: 16px;
-  color: #ffffff;
+  color: var(--numbered-color);
   text-align: center;
 }
 .section-num {
-  font-family: "Courier New", monospace;
+  font-family: var(--font-mono);
   font-weight: bold;
-  color: #00ff00;
+  color: var(--section-num-color);
   letter-spacing: 2px;
   margin: 0 0 4px;
 }
 .numbered h2 {
   margin: 0 0 8px;
-  color: #ffff00 !important;
-  text-shadow: 2px 2px 0 #ff0000 !important;
+  color: var(--numbered-h2-color) !important;
+  text-shadow: var(--numbered-h2-shadow) !important;
 }
 .section-desc {
-  color: #fff;
+  color: var(--numbered-color);
   max-width: 640px;
   margin: 0 auto 12px;
 }
@@ -362,57 +743,60 @@ footer { background: #c0c0c0; color: #000080; border-top: 4px double #ff00ff; pa
   flex-direction: column;
   gap: 8px;
 }
-/* Native <details> accordion = accessible, JS-free "Tech specs" panel */
+
+/* ======================== INGREDIENT ACCORDION ======================== */
 .ingredient {
-  border: 2px outset #fff;
-  background: linear-gradient(#fff, #d4d0c8);
+  border: var(--ingredient-border);
+  background: var(--ingredient-bg);
 }
 .ingredient > summary {
   cursor: pointer;
   list-style: none;
   padding: 6px 10px;
-  color: #000080;
-  font-family: "Courier New", monospace;
+  color: var(--ingredient-sum-color);
+  font-family: var(--font-mono);
   font-weight: bold;
   font-size: 0.95rem;
 }
 .ingredient > summary::-webkit-details-marker { display: none; }
 .ingredient > summary::before {
   content: "[+] ";
-  color: #cc0066;
+  color: var(--ingredient-marker-color);
 }
 .ingredient[open] > summary::before { content: "[\2212] "; }
-.ingredient > summary:hover { background: #ffff00; color: #ff0000; }
+.ingredient > summary:hover { background: var(--ingredient-hover-bg); color: var(--ingredient-hover-color); }
 .ingredient[open] > summary {
-  background: #000080;
-  color: #ffff00;
-  border-bottom: 2px solid #ff00ff;
+  background: var(--ingredient-open-bg);
+  color: var(--ingredient-open-color);
+  border-bottom: var(--ingredient-open-border);
 }
+
+/* ======================== SPEC PANEL ======================== */
 .spec {
-  background: #ffffff;
-  color: #000080;
+  background: var(--spec-bg);
+  color: var(--spec-color);
   padding: 12px 14px;
 }
 .spec h3 {
   margin: 12px 0 4px;
-  color: #cc0066;
-  font-family: "Times New Roman", serif;
+  color: var(--spec-h3-color);
+  font-family: var(--font-heading);
 }
-.spec p { margin: 0 0 8px; color: #000080; }
-.spec-stub { color: #aa0000 !important; font-weight: bold; }
+.spec p { margin: 0 0 8px; color: var(--spec-color); }
+.spec-stub { color: var(--spec-stub-color) !important; font-weight: bold; }
 .spec-tag {
   display: inline-block;
-  background: #000;
-  color: #00ff00;
-  font-family: "Courier New", monospace;
+  background: var(--spec-tag-bg);
+  color: var(--spec-tag-color);
+  font-family: var(--font-mono);
   font-weight: bold;
   padding: 2px 8px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 .spec-figure {
-  background: #ffffcc;
-  border: 2px ridge #00ffff;
+  background: var(--spec-fig-bg);
+  border: var(--spec-fig-border);
   padding: 8px;
   font-size: 0.9rem;
 }
@@ -422,24 +806,59 @@ footer { background: #c0c0c0; color: #000080; border-top: 4px double #ff00ff; pa
   margin-top: 4px;
 }
 .spec-table th, .spec-table td {
-  border: 1px solid #000080;
+  border: var(--spec-tbl-border);
   padding: 4px 8px;
   text-align: left;
   font-size: 0.9rem;
 }
 .spec-table th {
-  background: #000080;
-  color: #ffff00;
-  font-family: "Courier New", monospace;
+  background: var(--spec-th-bg);
+  color: var(--spec-th-color);
+  font-family: var(--font-mono);
 }
-.spec-table td:first-child { font-weight: bold; background: #ffffcc; }
+.spec-table td:first-child { font-weight: bold; background: var(--spec-td-bg); }
 
-/* ---------- Multiple testimonials ---------- */
-.testimonial h2 { color: #ffff00; text-shadow: 2px 2px 0 #ff00ff; }
+/* ======================== EXTRA TESTIMONIAL HEADING ======================== */
+.testimonial h2 { color: var(--testimonial-h2-color); text-shadow: var(--testimonial-h2-shadow); }
 .testimonial blockquote { margin: 0 auto 16px; }
 
+/* ======================== THEME TOGGLE ======================== */
+#theme-toggle {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: bold;
+  line-height: 1;
+  background: var(--btn-bg);
+  border: var(--btn-border);
+  color: var(--btn-color);
+}
+#theme-toggle:hover {
+  background: var(--btn-hover-bg);
+  color: var(--btn-hover-color);
+}
+
+/* ======================== WIN8 OVERRIDES ======================== */
+/* Properties that can't be expressed as a simple value variable */
+
+/* Kill the animated gradient — Metro uses flat static color bands */
+[data-theme="win8"] .rainbow-hr { animation: none; }
+
+/* Construction pill: white bg, dark text (parent color is white for stripe contrast) */
+[data-theme="win8"] .construction-text { color: #0078d7; }
+
+/* Flat active state — no 3D inset borders */
+[data-theme="win8"] .btn99:active,
+[data-theme="win8"] #theme-toggle:active { border-style: solid; background: var(--btn-hover-bg); }
+[data-theme="win8"] .navlist a:active { border-style: solid; }
+
 /* ============================================================
-   ACCESSIBILITY: respect reduced motion (the "bonus points")
+   ACCESSIBILITY: respect reduced motion
    Kills blink + scrolling marquees + hue shifts for anyone who
    asked their OS to reduce motion.
    ============================================================ */
@@ -453,7 +872,7 @@ footer { background: #c0c0c0; color: #000080; border-top: 4px double #ff00ff; pa
   .marquee { transform: none; }
 }
 
-/* ---------- Mobile-ish reflow (90s sites never did this, but a11y) ---------- */
+/* ======================== MOBILE ======================== */
 @media (max-width: 640px) {
   .hero h1 { font-size: 1.8rem; }
   .feature-icon { width: auto; font-size: 2.5rem; }
