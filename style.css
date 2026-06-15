@@ -870,8 +870,15 @@ footer { background: var(--footer-bg); color: var(--footer-color); border-top: v
 [data-theme="win8"] .rainbow-hr { display: none; }
 [data-theme="win8"] .rainbow { -webkit-text-fill-color: #ffffff; color: #ffffff; }
 
-/* ---- Construction bar: flat amber, white text ---- */
-[data-theme="win8"] .construction-text { color: #ffffff; }
+/* ---- Strip the 90s clutter Metro doesn't do: ---- */
+/* the under-construction banner, all flashing (blink) elements, and the
+   decorative emoji/icon glyphs (wrapped as .emoji in the markup). */
+[data-theme="win8"] .construction,
+[data-theme="win8"] .blink,
+[data-theme="win8"] .logo-orb,
+[data-theme="win8"] .feature-icon,
+[data-theme="win8"] .bigquote,
+[data-theme="win8"] .emoji { display: none; }
 
 /* ---- Header / nav: chrome-less, left-aligned app-bar tiles ---- */
 [data-theme="win8"] header { padding: 18px 8%; }
