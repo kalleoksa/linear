@@ -4,6 +4,8 @@
    ============================================================ */
 
 /* ---------- Base / the crime scene ---------- */
+html { overflow-x: hidden; }
+
 body {
   margin: 0;
   font-family: "Comic Sans MS", "Comic Sans", "Chalkboard SE", cursive, sans-serif;
@@ -17,6 +19,7 @@ body {
   background-position: 0 0, 20px 35px;
   font-size: 17px;
   line-height: 1.5;
+  overflow-x: hidden;            /* no horizontal scroll on mobile */
 }
 
 /* ---------- Accessibility helpers ---------- */
@@ -456,4 +459,12 @@ footer { background: #c0c0c0; color: #000080; border-top: 4px double #ff00ff; pa
   .feature-icon { width: auto; font-size: 2.5rem; }
   .footer-grid td { display: block; padding: 8px 0; }
   .tagline-cell { text-align: center; }
+
+  /* Logo wall: the 4-col table can't wrap, so collapse it and let
+     the badges flow into the available width instead of overflowing. */
+  .badge-grid { display: block; border-spacing: 0; width: 100%; }
+  .badge-grid tbody,
+  .badge-grid tr { display: block; }
+  .badge-grid td { display: inline-block; margin: 4px; }
+  .weblogo { padding: 6px 10px; font-size: 0.9rem; }
 }
