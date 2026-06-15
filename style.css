@@ -295,6 +295,85 @@ footer { background: #c0c0c0; color: #000080; border-top: 4px double #ff00ff; pa
 .bestviewed a { color: #0000ee; }
 .bestviewed code { background: #fff; padding: 0 4px; }
 
+/* ---------- Hero "new feature" pill ---------- */
+.new-feature {
+  margin: 8px 0 0;
+  font-weight: bold;
+}
+.new-feature a {
+  color: #00ffff;
+  background: #000;
+  border: 2px outset #888;
+  padding: 4px 10px;
+  text-decoration: none;
+  text-shadow: 1px 1px 0 #ff00ff;
+}
+.new-feature a:hover { background: #ffff00; color: #ff0000; }
+
+/* ---------- "New species" statement ---------- */
+.statement {
+  background: #ffffcc;
+  color: #000080;
+  border: 4px ridge #00ffff;
+  padding: 18px;
+  text-align: center;
+}
+.statement h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #000080;
+  text-shadow: none;
+}
+.statement strong { color: #cc0066; }
+
+/* ---------- Numbered product sections (1.0 - 5.0) ---------- */
+.numbered {
+  background: #330066;
+  border: 4px double #ffff00;
+  padding: 16px;
+  color: #ffffff;
+  text-align: center;
+}
+.section-num {
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  color: #00ff00;
+  letter-spacing: 2px;
+  margin: 0 0 4px;
+}
+.numbered h2 {
+  margin: 0 0 8px;
+  color: #ffff00 !important;
+  text-shadow: 2px 2px 0 #ff0000 !important;
+}
+.section-desc {
+  color: #fff;
+  max-width: 640px;
+  margin: 0 auto 12px;
+}
+.ingredients {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+.ingredients li {
+  background: linear-gradient(#fff, #d4d0c8);
+  border: 2px outset #fff;
+  color: #000080;
+  padding: 4px 10px;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* ---------- Multiple testimonials ---------- */
+.testimonial h2 { color: #ffff00; text-shadow: 2px 2px 0 #ff00ff; }
+.testimonial blockquote { margin: 0 auto 16px; }
+
 /* ============================================================
    ACCESSIBILITY: respect reduced motion (the "bonus points")
    Kills blink + scrolling marquees + hue shifts for anyone who
