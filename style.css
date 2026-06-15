@@ -352,23 +352,84 @@ footer { background: #c0c0c0; color: #000080; border-top: 4px double #ff00ff; pa
   margin: 0 auto 12px;
 }
 .ingredients {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: left;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 8px;
-  justify-content: center;
 }
-.ingredients li {
-  background: linear-gradient(#fff, #d4d0c8);
+/* Native <details> accordion = accessible, JS-free "Tech specs" panel */
+.ingredient {
   border: 2px outset #fff;
+  background: linear-gradient(#fff, #d4d0c8);
+}
+.ingredient > summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 6px 10px;
   color: #000080;
-  padding: 4px 10px;
   font-family: "Courier New", monospace;
   font-weight: bold;
+  font-size: 0.95rem;
+}
+.ingredient > summary::-webkit-details-marker { display: none; }
+.ingredient > summary::before {
+  content: "[+] ";
+  color: #cc0066;
+}
+.ingredient[open] > summary::before { content: "[\2212] "; }
+.ingredient > summary:hover { background: #ffff00; color: #ff0000; }
+.ingredient[open] > summary {
+  background: #000080;
+  color: #ffff00;
+  border-bottom: 2px solid #ff00ff;
+}
+.spec {
+  background: #ffffff;
+  color: #000080;
+  padding: 12px 14px;
+}
+.spec h3 {
+  margin: 12px 0 4px;
+  color: #cc0066;
+  font-family: "Times New Roman", serif;
+}
+.spec p { margin: 0 0 8px; color: #000080; }
+.spec-stub { color: #aa0000 !important; font-weight: bold; }
+.spec-tag {
+  display: inline-block;
+  background: #000;
+  color: #00ff00;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  padding: 2px 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.spec-figure {
+  background: #ffffcc;
+  border: 2px ridge #00ffff;
+  padding: 8px;
   font-size: 0.9rem;
 }
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 4px;
+}
+.spec-table th, .spec-table td {
+  border: 1px solid #000080;
+  padding: 4px 8px;
+  text-align: left;
+  font-size: 0.9rem;
+}
+.spec-table th {
+  background: #000080;
+  color: #ffff00;
+  font-family: "Courier New", monospace;
+}
+.spec-table td:first-child { font-weight: bold; background: #ffffcc; }
 
 /* ---------- Multiple testimonials ---------- */
 .testimonial h2 { color: #ffff00; text-shadow: 2px 2px 0 #ff00ff; }
