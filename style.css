@@ -1,38 +1,622 @@
 /* ============================================================
-   RETRO LINEAR (tm) - GeoCities Edition stylesheet
-   Keep Linear's content. Ruin Linear's aesthetic.
+   RETRO LINEAR (tm) — Multi-theme stylesheet
+   Theme 1: GeoCities    (data-theme="geocities", default)
+   Theme 2: Windows 8    (data-theme="win8")
+   Theme 3: Apple 2005   (data-theme="apple")
+   Switch by cycling data-theme on <html>; the toggle button
+   in the corner persists the choice to localStorage.
    ============================================================ */
 
-/* ---------- Base / the crime scene ---------- */
+/* ======================== THEME: GeoCities (default) ======================== */
+:root {
+  /* Page */
+  --bg:       #000080;
+  --fg:       #ffff00;
+  --bg-image: radial-gradient(white 1px, transparent 1.5px),
+              radial-gradient(#00ffff 1px, transparent 1.5px);
+  --bg-size:  40px 40px, 70px 70px;
+  --bg-pos:   0 0, 20px 35px;
+  --font-body:    "Comic Sans MS","Comic Sans","Chalkboard SE",cursive,sans-serif;
+  --font-heading: "Times New Roman",Times,serif;
+  --font-mono:    "Courier New",monospace;
+
+  /* Accessibility */
+  --skip-bg:       #ffff00;
+  --skip-color:    #000;
+  --skip-border:   3px solid #ff0000;
+  --focus-outline: 4px dashed #00ff00;
+
+  /* Blink */
+  --blink-hot: #ff0000;
+
+  /* Topbar / marquee */
+  --topbar-bg:     #000;
+  --topbar-border: 3px ridge #00ff00;
+  --marquee-color: #00ff00;
+
+  /* Construction bar */
+  --construction-stripe:  repeating-linear-gradient(45deg, #ffcc00 0 18px, #000 18px 36px);
+  --construction-text-bg: #ffcc00;
+  --construction-color:   #000;
+  --construction-shadow:  0 0 2px #fff, 0 0 2px #fff;
+
+  /* Header */
+  --header-bg:       #c0c0c0;
+  --header-border:   4px double #ff00ff;
+  --wordmark-color:  #800080;
+  --wordmark-shadow: 2px 2px 0 #ff00ff, 4px 4px 0 #00ffff;
+  --tagline-color:   #000080;
+
+  /* Nav */
+  --nav-btn-bg:          linear-gradient(#fff, #d4d0c8);
+  --nav-btn-border:      2px outset #fff;
+  --nav-btn-color:       #000080;
+  --nav-btn-hover-bg:    #ffff00;
+  --nav-btn-hover-color: #ff0000;
+  --nav-cta-bg:          linear-gradient(#ff66cc, #cc0066);
+  --nav-cta-color:       #fff;
+  --nav-cta-bcolor:      #ff99dd;
+  --nav-cta-hover-bg:    #ffff00;
+  --nav-cta-hover-color: #cc0066;
+
+  /* Section headings */
+  --heading-color:  #ffff00;
+  --heading-shadow: 2px 2px 0 #ff0000;
+
+  /* Hero */
+  --hero-sub-color: #ffffff;
+  --hero-em-color:  #00ff00;
+
+  /* Buttons */
+  --btn-bg:                  linear-gradient(#f4f4f4, #c0c0c0);
+  --btn-border:              3px outset #ffffff;
+  --btn-color:               #000080;
+  --btn-hover-bg:            #ffff00;
+  --btn-hover-color:         #ff0000;
+  --btn-primary-bg:          linear-gradient(#66ff66, #009900);
+  --btn-primary-color:       #000;
+  --btn-primary-bcolor:      #ccffcc;
+  --btn-primary-hover-bg:    #ffff00;
+  --btn-primary-hover-color: #cc0000;
+
+  /* Screenshot */
+  --screenshot-bg:     #000;
+  --screenshot-border: 4px ridge #00ff00;
+  --screenshot-color:  #00ff00;
+
+  /* Logo wall */
+  --logowall-h2-color:  #ffff00;
+  --logowall-h2-shadow: 2px 2px 0 #ff00ff;
+  --powered-color:      #fff;
+  --weblogo-bg:         #000;
+  --weblogo-border:     3px outset #888;
+  --weblogo-color:      #00ffff;
+  --weblogo-shadow:     1px 1px 0 #ff00ff;
+
+  /* Feature cards */
+  --feature-bg:       #ffffcc;
+  --feature-color:    #000080;
+  --feature-border:   4px ridge #ff00ff;
+  --feature-h3-color: #cc0066;
+  --feature-em-color: #cc0066;
+
+  /* Method section */
+  --method-bg:         #330066;
+  --method-border:     4px double #ffff00;
+  --method-color:      #ffffff;
+  --method-list-color: #00ff00;
+
+  /* Statement */
+  --statement-bg:           #ffffcc;
+  --statement-color:        #000080;
+  --statement-border:       4px ridge #00ffff;
+  --statement-h2-color:     #000080;
+  --statement-strong-color: #cc0066;
+
+  /* Numbered sections */
+  --numbered-bg:        #330066;
+  --numbered-border:    4px double #ffff00;
+  --numbered-color:     #ffffff;
+  --section-num-color:  #00ff00;
+  --numbered-h2-color:  #ffff00;
+  --numbered-h2-shadow: 2px 2px 0 #ff0000;
+
+  /* Ingredient accordion */
+  --ingredient-bg:           linear-gradient(#fff, #d4d0c8);
+  --ingredient-border:       2px outset #fff;
+  --ingredient-sum-color:    #000080;
+  --ingredient-marker-color: #cc0066;
+  --ingredient-hover-bg:     #ffff00;
+  --ingredient-hover-color:  #ff0000;
+  --ingredient-open-bg:      #000080;
+  --ingredient-open-color:   #ffff00;
+  --ingredient-open-border:  2px solid #ff00ff;
+
+  /* Spec panel */
+  --spec-bg:        #ffffff;
+  --spec-color:     #000080;
+  --spec-h3-color:  #cc0066;
+  --spec-stub-color:#aa0000;
+  --spec-tag-bg:    #000;
+  --spec-tag-color: #00ff00;
+  --spec-fig-bg:    #ffffcc;
+  --spec-fig-border:2px ridge #00ffff;
+  --spec-tbl-border:1px solid #000080;
+  --spec-th-bg:     #000080;
+  --spec-th-color:  #ffff00;
+  --spec-td-bg:     #ffffcc;
+
+  /* Testimonials */
+  --testimonial-h2-color:  #ffff00;
+  --testimonial-h2-shadow: 2px 2px 0 #ff00ff;
+  --blockquote-bg:         #fff;
+  --blockquote-color:      #000080;
+  --blockquote-border:     4px ridge #00ffff;
+  --bigquote-color:        #ff00ff;
+  --attribution-color:     #cc0066;
+  --speed-badge-color:     #ffff00;
+  --speed-badge-shadow:    1px 1px 0 #ff0000;
+
+  /* Final CTA */
+  --cta-bg:          #000;
+  --cta-border:      4px ridge #ff00ff;
+  --cta-color:       #fff;
+  --fineprint-color: #888;
+
+  /* Footer */
+  --footer-bg:      #c0c0c0;
+  --footer-color:   #000080;
+  --footer-border:  4px double #ff00ff;
+  --footer-h4:      #800080;
+  --footer-a:       #000080;
+  --footer-a-hover: #ff0000;
+
+  /* Webring */
+  --webring-a:  #0000ee;
+  --ring-label: #800080;
+
+  /* Hit counter */
+  --counter-bg:     #000;
+  --counter-color:  #00ff00;
+  --counter-border: 1px solid #00ff00;
+
+  /* Best-viewed note */
+  --bestviewed-color: #000080;
+  --bestviewed-a:     #0000ee;
+
+  /* New-feature pill */
+  --pill-bg:          #000;
+  --pill-color:       #00ffff;
+  --pill-border:      2px outset #888;
+  --pill-shadow:      1px 1px 0 #ff00ff;
+  --pill-hover-bg:    #ffff00;
+  --pill-hover-color: #ff0000;
+
+  /* Rainbow gradient (text + hr) */
+  --rainbow-gradient: linear-gradient(90deg,#ff0000,#ff9900,#ffff00,#00ff00,#00ffff,#0000ff,#ff00ff);
+  --rainbow-hr-size:  200% 100%;
+}
+
+
+/* ======================== THEME: Windows 8 / Metro ========================
+   Authentic Metro: a deep-purple Start-screen canvas, bright flat Live
+   Tiles, edge-to-edge color blocks, no chrome (no borders/shadows/
+   gradients), and a bold light-weight Segoe UI typographic hierarchy.
+   Token values live here; structural layout lives in the WIN8 / METRO
+   STRUCTURAL OVERRIDES block further down.
+   =========================================================================== */
+[data-theme="win8"] {
+  /* Page — deep purple Start screen */
+  --bg:       #3b0d4d;
+  --fg:       #ffffff;
+  --bg-image: none;
+  --bg-size:  auto;
+  --bg-pos:   0 0;
+  --font-body:    "Segoe UI","Segoe UI Web (West European)",-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --font-heading: "Segoe UI Light","Segoe UI Semilight","Segoe UI",-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --font-mono:    "Consolas","Courier New",monospace;
+
+  /* Accessibility */
+  --skip-bg:       #1ba1e2;
+  --skip-color:    #fff;
+  --skip-border:   0;
+  --focus-outline: 3px solid #ffffff;
+
+  /* Blink */
+  --blink-hot: #e51400;
+
+  /* Topbar / marquee */
+  --topbar-bg:     #2b0838;
+  --topbar-border: none;
+  --marquee-color: #1ba1e2;
+
+  /* Construction bar — flat amber, no caution stripes */
+  --construction-stripe:  #fa6800;
+  --construction-text-bg: transparent;
+  --construction-color:   #ffffff;
+  --construction-shadow:  none;
+
+  /* Header — chrome-less */
+  --header-bg:       transparent;
+  --header-border:   none;
+  --wordmark-color:  #ffffff;
+  --wordmark-shadow: none;
+  --tagline-color:   rgba(255,255,255,.6);
+
+  /* Nav — app-bar style outline tiles + one solid accent CTA */
+  --nav-btn-bg:          transparent;
+  --nav-btn-border:      2px solid rgba(255,255,255,.5);
+  --nav-btn-color:       #ffffff;
+  --nav-btn-hover-bg:    #ffffff;
+  --nav-btn-hover-color: #3b0d4d;
+  --nav-cta-bg:          #1ba1e2;
+  --nav-cta-color:       #ffffff;
+  --nav-cta-bcolor:      #1ba1e2;
+  --nav-cta-hover-bg:    #ffffff;
+  --nav-cta-hover-color: #1ba1e2;
+
+  /* Section headings */
+  --heading-color:  #ffffff;
+  --heading-shadow: none;
+
+  /* Hero */
+  --hero-sub-color: rgba(255,255,255,.75);
+  --hero-em-color:  #1ba1e2;
+
+  /* Buttons — Metro outline (default) + solid accent (primary) */
+  --btn-bg:                  transparent;
+  --btn-border:              2px solid #ffffff;
+  --btn-color:               #ffffff;
+  --btn-hover-bg:            #ffffff;
+  --btn-hover-color:         #3b0d4d;
+  --btn-primary-bg:          #60a917;
+  --btn-primary-color:       #ffffff;
+  --btn-primary-bcolor:      #60a917;
+  --btn-primary-hover-bg:    #76b822;
+  --btn-primary-hover-color: #ffffff;
+
+  /* Screenshot */
+  --screenshot-bg:     #000000;
+  --screenshot-border: 0;
+  --screenshot-color:  #1ba1e2;
+
+  /* Logo wall (tinted per-tile in the override block) */
+  --logowall-h2-color:  #ffffff;
+  --logowall-h2-shadow: none;
+  --powered-color:      rgba(255,255,255,.75);
+  --weblogo-bg:         #0050ef;
+  --weblogo-border:     0;
+  --weblogo-color:      #ffffff;
+  --weblogo-shadow:     none;
+
+  /* Feature Live Tiles (colored per-tile in the override block) */
+  --feature-bg:       #00aba9;
+  --feature-color:    #ffffff;
+  --feature-border:   0;
+  --feature-h3-color: #ffffff;
+  --feature-em-color: #ffffff;
+
+  /* Changelog block */
+  --method-bg:         #2d7d9a;
+  --method-border:     0;
+  --method-color:      #ffffff;
+  --method-list-color: #ffffff;
+
+  /* Statement — flat cobalt block */
+  --statement-bg:           #0050ef;
+  --statement-color:        #ffffff;
+  --statement-border:       0;
+  --statement-h2-color:     #ffffff;
+  --statement-strong-color: #ffffff;
+
+  /* Numbered hubs (colored per-section by id in the override block) */
+  --numbered-bg:        #00aba9;
+  --numbered-border:    0;
+  --numbered-color:     #ffffff;
+  --section-num-color:  rgba(255,255,255,.7);
+  --numbered-h2-color:  #ffffff;
+  --numbered-h2-shadow: none;
+
+  /* Ingredient accordion — translucent tiles on the colored hubs */
+  --ingredient-bg:           rgba(255,255,255,.14);
+  --ingredient-border:       0;
+  --ingredient-sum-color:    #ffffff;
+  --ingredient-marker-color: #ffffff;
+  --ingredient-hover-bg:     rgba(255,255,255,.28);
+  --ingredient-hover-color:  #ffffff;
+  --ingredient-open-bg:      #ffffff;
+  --ingredient-open-color:   #1f1f1f;
+  --ingredient-open-border:  0;
+
+  /* Spec panel — light card for readability */
+  --spec-bg:        #ffffff;
+  --spec-color:     #1f1f1f;
+  --spec-h3-color:  #0050ef;
+  --spec-stub-color:#e51400;
+  --spec-tag-bg:    #0050ef;
+  --spec-tag-color: #ffffff;
+  --spec-fig-bg:    #f2f2f2;
+  --spec-fig-border:0;
+  --spec-tbl-border:1px solid #dddddd;
+  --spec-th-bg:     #0050ef;
+  --spec-th-color:  #ffffff;
+  --spec-td-bg:     #f2f2f2;
+
+  /* Testimonials */
+  --testimonial-h2-color:  #ffffff;
+  --testimonial-h2-shadow: none;
+  --blockquote-bg:         #2b0838;
+  --blockquote-color:      #ffffff;
+  --blockquote-border:     0;
+  --bigquote-color:        #1ba1e2;
+  --attribution-color:     #1ba1e2;
+  --speed-badge-color:     #fa6800;
+  --speed-badge-shadow:    none;
+
+  /* Final CTA — flat green block */
+  --cta-bg:          #60a917;
+  --cta-border:      0;
+  --cta-color:       #ffffff;
+  --fineprint-color: rgba(255,255,255,.65);
+
+  /* Footer */
+  --footer-bg:      #2b0838;
+  --footer-color:   #ffffff;
+  --footer-border:  none;
+  --footer-h4:      #1ba1e2;
+  --footer-a:       rgba(255,255,255,.75);
+  --footer-a-hover: #1ba1e2;
+
+  /* Webring */
+  --webring-a:  #1ba1e2;
+  --ring-label: #fa6800;
+
+  /* Hit counter */
+  --counter-bg:     #000000;
+  --counter-color:  #1ba1e2;
+  --counter-border: 0;
+
+  /* Best-viewed note */
+  --bestviewed-color: rgba(255,255,255,.65);
+  --bestviewed-a:     #1ba1e2;
+
+  /* New-feature pill — flat amber */
+  --pill-bg:          #fa6800;
+  --pill-color:       #ffffff;
+  --pill-border:      0;
+  --pill-shadow:      none;
+  --pill-hover-bg:    #ffffff;
+  --pill-hover-color: #fa6800;
+
+  /* Rainbow → flat white (Metro has no rainbow); hr hidden in overrides */
+  --rainbow-gradient: #ffffff;
+  --rainbow-hr-size:  100% 100%;
+}
+
+
+/* ======================== THEME: Apple 2005 ========================
+   The apple.com / Apple Store circa 2005 (Mac OS X Tiger era): a clean
+   white canvas with faint Aqua pinstripes, Lucida Grande type, glossy
+   blue "aqua" buttons, brushed-silver tab bars, and rounded white cards
+   with thin gray hairline borders. Token values live here; rounding,
+   gloss highlights and de-cluttering live in the APPLE 2005 STRUCTURAL
+   OVERRIDES block further down.
+   =================================================================== */
+[data-theme="apple"] {
+  /* Page — white with a faint Aqua pinstripe */
+  --bg:       #ffffff;
+  --fg:       #333333;
+  --bg-image: repeating-linear-gradient(0deg, rgba(0,40,90,0) 0 2px, rgba(0,40,90,.02) 2px 4px);
+  --bg-size:  auto;
+  --bg-pos:   0 0;
+  --font-body:    "Lucida Grande","Lucida Sans Unicode","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --font-heading: "Lucida Grande","Lucida Sans Unicode","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --font-mono:    "Monaco","Menlo","Courier New",monospace;
+
+  /* Accessibility */
+  --skip-bg:       #0066cc;
+  --skip-color:    #ffffff;
+  --skip-border:   0;
+  --focus-outline: 2px solid #0a6cff;
+
+  /* Blink (hidden in overrides) */
+  --blink-hot: #cc0000;
+
+  /* Topbar / marquee (hidden in overrides) */
+  --topbar-bg:     #e8e8e8;
+  --topbar-border: none;
+  --marquee-color: #666666;
+
+  /* Construction bar (hidden in overrides) */
+  --construction-stripe:  #f0f0f0;
+  --construction-text-bg: transparent;
+  --construction-color:   #333333;
+  --construction-shadow:  none;
+
+  /* Header — brushed-silver tab bar */
+  --header-bg:       linear-gradient(#fbfbfb, #d2d2d2);
+  --header-border:   1px solid #9a9a9a;
+  --wordmark-color:  #1a1a1a;
+  --wordmark-shadow: none;
+  --tagline-color:   #666666;
+
+  /* Nav — silver tabs + one glossy aqua CTA */
+  --nav-btn-bg:          linear-gradient(#fdfdfd, #dcdcdc);
+  --nav-btn-border:      1px solid #a8a8a8;
+  --nav-btn-color:       #1a1a1a;
+  --nav-btn-hover-bg:    linear-gradient(#eaf4fd, #bfe0fb);
+  --nav-btn-hover-color: #003366;
+  --nav-cta-bg:          linear-gradient(#9fd0f7, #3a82d0);
+  --nav-cta-color:       #ffffff;
+  --nav-cta-bcolor:      #2f6db5;
+  --nav-cta-hover-bg:    linear-gradient(#b6deff, #4a90d9);
+  --nav-cta-hover-color: #ffffff;
+
+  /* Section headings */
+  --heading-color:  #1a1a1a;
+  --heading-shadow: none;
+
+  /* Hero */
+  --hero-sub-color: #555555;
+  --hero-em-color:  #0066cc;
+
+  /* Buttons — silver (default) + glossy aqua (primary) */
+  --btn-bg:                  linear-gradient(#ffffff, #e2e2e2);
+  --btn-border:              1px solid #a8a8a8;
+  --btn-color:               #1a1a1a;
+  --btn-hover-bg:            linear-gradient(#f0f7ff, #cfe6fb);
+  --btn-hover-color:         #003366;
+  --btn-primary-bg:          linear-gradient(#bfe0fb 0%, #7cb8ef 50%, #4a90d9 51%, #2f6db5 100%);
+  --btn-primary-color:       #ffffff;
+  --btn-primary-bcolor:      #2f6db5;
+  --btn-primary-hover-bg:    linear-gradient(#cfeaff 0%, #8cc2f3 50%, #5a9ee0 51%, #3a7cc4 100%);
+  --btn-primary-hover-color: #ffffff;
+
+  /* Screenshot — clean light window */
+  --screenshot-bg:     #f7f7f7;
+  --screenshot-border: 1px solid #b5b5b5;
+  --screenshot-color:  #333333;
+
+  /* Logo wall */
+  --logowall-h2-color:  #1a1a1a;
+  --logowall-h2-shadow: none;
+  --powered-color:      #555555;
+  --weblogo-bg:         linear-gradient(#ffffff, #ececec);
+  --weblogo-border:     1px solid #c8c8c8;
+  --weblogo-color:      #333333;
+  --weblogo-shadow:     none;
+
+  /* Feature cards — white rounded cards */
+  --feature-bg:       #ffffff;
+  --feature-color:    #333333;
+  --feature-border:   1px solid #d2d2d2;
+  --feature-h3-color: #0066cc;
+  --feature-em-color: #0066cc;
+
+  /* Changelog block */
+  --method-bg:         linear-gradient(#f3f6fb, #e6edf6);
+  --method-border:     1px solid #cdd8e6;
+  --method-color:      #333333;
+  --method-list-color: #0066cc;
+
+  /* Statement — soft blue panel */
+  --statement-bg:           linear-gradient(#f7fbff, #e9f2fb);
+  --statement-color:        #333333;
+  --statement-border:       1px solid #cdddee;
+  --statement-h2-color:     #1a1a1a;
+  --statement-strong-color: #0066cc;
+
+  /* Numbered sections — white cards */
+  --numbered-bg:        #ffffff;
+  --numbered-border:    1px solid #d2d2d2;
+  --numbered-color:     #333333;
+  --section-num-color:  #0066cc;
+  --numbered-h2-color:  #1a1a1a;
+  --numbered-h2-shadow: none;
+
+  /* Ingredient accordion — Aqua disclosure rows */
+  --ingredient-bg:           linear-gradient(#fcfcfc, #efefef);
+  --ingredient-border:       1px solid #d2d2d2;
+  --ingredient-sum-color:    #1a1a1a;
+  --ingredient-marker-color: #0066cc;
+  --ingredient-hover-bg:     linear-gradient(#eaf4fd, #d4e9fb);
+  --ingredient-hover-color:  #003366;
+  --ingredient-open-bg:      linear-gradient(#e8f1fb, #d4e6f7);
+  --ingredient-open-color:   #003366;
+  --ingredient-open-border:  1px solid #cdddee;
+
+  /* Spec panel */
+  --spec-bg:        #ffffff;
+  --spec-color:     #333333;
+  --spec-h3-color:  #0066cc;
+  --spec-stub-color:#bb4400;
+  --spec-tag-bg:    linear-gradient(#9fd0f7, #3a82d0);
+  --spec-tag-color: #ffffff;
+  --spec-fig-bg:    #f5f5f5;
+  --spec-fig-border:1px solid #d8d8d8;
+  --spec-tbl-border:1px solid #dcdcdc;
+  --spec-th-bg:     linear-gradient(#f0f0f0, #dcdcdc);
+  --spec-th-color:  #1a1a1a;
+  --spec-td-bg:     #f7f7f7;
+
+  /* Testimonials */
+  --testimonial-h2-color:  #1a1a1a;
+  --testimonial-h2-shadow: none;
+  --blockquote-bg:         #ffffff;
+  --blockquote-color:      #333333;
+  --blockquote-border:     1px solid #d2d2d2;
+  --bigquote-color:        #9fc4e8;
+  --attribution-color:     #0066cc;
+  --speed-badge-color:     #0066cc;
+  --speed-badge-shadow:    none;
+
+  /* Final CTA — soft blue panel */
+  --cta-bg:          linear-gradient(#f7fbff, #e6f0fb);
+  --cta-border:      1px solid #cdddee;
+  --cta-color:       #333333;
+  --fineprint-color: #888888;
+
+  /* Footer — silver bar */
+  --footer-bg:      linear-gradient(#f3f3f3, #e2e2e2);
+  --footer-color:   #555555;
+  --footer-border:  1px solid #c8c8c8;
+  --footer-h4:      #1a1a1a;
+  --footer-a:       #0066cc;
+  --footer-a-hover: #003399;
+
+  /* Webring */
+  --webring-a:  #0066cc;
+  --ring-label: #888888;
+
+  /* Hit counter */
+  --counter-bg:     linear-gradient(#ffffff, #e8e8e8);
+  --counter-color:  #333333;
+  --counter-border: 1px solid #c8c8c8;
+
+  /* Best-viewed note */
+  --bestviewed-color: #888888;
+  --bestviewed-a:     #0066cc;
+
+  /* New-feature pill — glossy aqua */
+  --pill-bg:          linear-gradient(#9fd0f7, #3a82d0);
+  --pill-color:       #ffffff;
+  --pill-border:      1px solid #2f6db5;
+  --pill-shadow:      none;
+  --pill-hover-bg:    linear-gradient(#b6deff, #4a90d9);
+  --pill-hover-color: #ffffff;
+
+  /* Rainbow → flat Apple blue (no rainbow rules); hr hidden in overrides */
+  --rainbow-gradient: #0066cc;
+  --rainbow-hr-size:  100% 100%;
+}
+
+/* ======================== BASE ======================== */
 html { overflow-x: hidden; }
 
 body {
   margin: 0;
-  font-family: "Comic Sans MS", "Comic Sans", "Chalkboard SE", cursive, sans-serif;
-  color: #ffff00;                 /* hazard yellow text */
-  background-color: #000080;      /* classic navy */
-  /* Tiled "starfield" made of pure CSS - no external images, works offline */
-  background-image:
-    radial-gradient(white 1px, transparent 1.5px),
-    radial-gradient(#00ffff 1px, transparent 1.5px);
-  background-size: 40px 40px, 70px 70px;
-  background-position: 0 0, 20px 35px;
+  font-family: var(--font-body);
+  color: var(--fg);
+  background-color: var(--bg);
+  background-image: var(--bg-image);
+  background-size: var(--bg-size);
+  background-position: var(--bg-pos);
   font-size: 17px;
   line-height: 1.5;
-  overflow-x: hidden;            /* no horizontal scroll on mobile */
+  overflow-x: hidden;
 }
 
-/* ---------- Accessibility helpers ---------- */
+/* ======================== ACCESSIBILITY ======================== */
 .skip-link {
   position: absolute;
   left: -9999px;
   top: 0;
-  background: #ffff00;
-  color: #000;
+  background: var(--skip-bg);
+  color: var(--skip-color);
   padding: 8px 14px;
   font-weight: bold;
   z-index: 999;
-  border: 3px solid #ff0000;
+  border: var(--skip-border);
 }
 .skip-link:focus { left: 8px; top: 8px; }
 
@@ -46,27 +630,27 @@ body {
 
 a:focus-visible,
 .btn99:focus-visible {
-  outline: 4px dashed #00ff00;
+  outline: var(--focus-outline);
   outline-offset: 2px;
 }
 
-/* ---------- BLINK (tamed for a11y) ---------- */
+/* ======================== BLINK ======================== */
 .blink { animation: blink 1s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
-.blink.hot { color: #ff0000; font-weight: bold; }
+.blink.hot { color: var(--blink-hot); font-weight: bold; }
 
-/* ---------- Marquees (CSS, so reduced-motion can stop them) ---------- */
+/* ======================== TOPBAR / MARQUEE ======================== */
 .topbar {
-  background: #000;
-  border-top: 3px ridge #00ff00;
-  border-bottom: 3px ridge #00ff00;
+  background: var(--topbar-bg);
+  border-top: var(--topbar-border);
+  border-bottom: var(--topbar-border);
   overflow: hidden;
   white-space: nowrap;
 }
 .marquee {
   display: inline-flex;
   white-space: nowrap;
-  color: #00ff00;
+  color: var(--marquee-color);
   font-weight: bold;
   padding: 4px 0;
   animation: scrollLeft 30s linear infinite;
@@ -77,25 +661,25 @@ a:focus-visible,
   to   { transform: translateX(-50%); }
 }
 
-/* ---------- Under construction ---------- */
+/* ======================== CONSTRUCTION BAR ======================== */
 .construction {
-  background: repeating-linear-gradient(45deg, #ffcc00 0 18px, #000 18px 36px);
-  color: #000;
+  background: var(--construction-stripe);
+  color: var(--construction-color);
   text-align: center;
   padding: 6px;
   font-weight: bold;
-  text-shadow: 0 0 2px #fff, 0 0 2px #fff;
+  text-shadow: var(--construction-shadow);
 }
 .construction-text {
-  background: #ffcc00;
+  background: var(--construction-text-bg);
   padding: 2px 8px;
   display: inline-block;
 }
 
-/* ---------- Header / logo bar / nav ---------- */
+/* ======================== HEADER / NAV ======================== */
 header {
-  background: #c0c0c0;            /* win95 silver */
-  border-bottom: 4px double #ff00ff;
+  background: var(--header-bg);
+  border-bottom: var(--header-border);
   padding: 8px;
 }
 .logobar { width: 100%; }
@@ -104,13 +688,13 @@ header {
 .wordmark {
   font-size: 2rem;
   font-weight: bold;
-  color: #800080;
-  text-shadow: 2px 2px 0 #ff00ff, 4px 4px 0 #00ffff;
+  color: var(--wordmark-color);
+  text-shadow: var(--wordmark-shadow);
   vertical-align: middle;
 }
 .tagline-cell {
   text-align: right;
-  color: #000080;
+  color: var(--tagline-color);
   font-style: italic;
 }
 
@@ -125,27 +709,27 @@ header {
 }
 .navlist a {
   display: block;
-  background: linear-gradient(#fff, #d4d0c8);
-  border: 2px outset #fff;
-  color: #000080;
+  background: var(--nav-btn-bg);
+  border: var(--nav-btn-border);
+  color: var(--nav-btn-color);
   padding: 4px 10px;
   text-decoration: none;
   font-weight: bold;
 }
-.navlist a:hover { background: #ffff00; color: #ff0000; }
+.navlist a:hover { background: var(--nav-btn-hover-bg); color: var(--nav-btn-hover-color); }
 .navlist a:active { border-style: inset; }
-.nav-cta a { background: linear-gradient(#ff66cc, #cc0066); color: #fff; border-color: #ff99dd; }
-.nav-cta a:hover { background: #ffff00; color: #cc0066; }
+.nav-cta a { background: var(--nav-cta-bg); color: var(--nav-cta-color); border-color: var(--nav-cta-bcolor); }
+.nav-cta a:hover { background: var(--nav-cta-hover-bg); color: var(--nav-cta-hover-color); }
 
-/* ---------- Layout ---------- */
+/* ======================== LAYOUT ======================== */
 main { max-width: 900px; margin: 0 auto; padding: 0 10px; }
 section { margin: 24px 0; }
 
-h1, h2, h3, h4 { font-family: "Times New Roman", Times, serif; }
+h1, h2, h3, h4 { font-family: var(--font-heading); }
 
-/* ---------- Rainbow text + dividers ---------- */
+/* ======================== RAINBOW ======================== */
 .rainbow {
-  background: linear-gradient(90deg,#ff0000,#ff9900,#ffff00,#00ff00,#00ffff,#0000ff,#ff00ff);
+  background: var(--rainbow-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -155,202 +739,202 @@ h1, h2, h3, h4 { font-family: "Times New Roman", Times, serif; }
   height: 8px;
   border: 0;
   margin: 18px 0;
-  background: linear-gradient(90deg,#ff0000,#ff9900,#ffff00,#00ff00,#00ffff,#0000ff,#ff00ff,#ff0000);
-  background-size: 200% 100%;
+  background: var(--rainbow-gradient);
+  background-size: var(--rainbow-hr-size);
   animation: hueShift 6s linear infinite;
 }
 @keyframes hueShift { to { background-position: 200% 0; } }
 
-/* ---------- Hero ---------- */
+/* ======================== HERO ======================== */
 .hero { text-align: center; }
 .hero h1 { font-size: 2.6rem; margin: 18px 0 6px; }
-.hero-sub { font-size: 1.2rem; color: #ffffff; max-width: 640px; margin: 0 auto 16px; }
-.hero-sub em { color: #00ff00; font-weight: bold; }
+.hero-sub { font-size: 1.2rem; color: var(--hero-sub-color); max-width: 640px; margin: 0 auto 16px; }
+.hero-sub em { color: var(--hero-em-color); font-weight: bold; }
 
 .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 16px 0; }
 
 .btn99 {
   display: inline-block;
-  background: linear-gradient(#f4f4f4, #c0c0c0);
-  border: 3px outset #ffffff;
-  color: #000080;
+  background: var(--btn-bg);
+  border: var(--btn-border);
+  color: var(--btn-color);
   padding: 10px 18px;
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: var(--font-body);
   font-weight: bold;
   font-size: 1.05rem;
   text-decoration: none;
   cursor: pointer;
 }
-.btn99:hover { background: #ffff00; color: #ff0000; }
+.btn99:hover { background: var(--btn-hover-bg); color: var(--btn-hover-color); }
 .btn99:active { border-style: inset; }
-.btn-primary { background: linear-gradient(#66ff66, #009900); color: #000; border-color: #ccffcc; }
-.btn-primary:hover { background: #ffff00; color: #cc0000; }
+.btn-primary { background: var(--btn-primary-bg); color: var(--btn-primary-color); border-color: var(--btn-primary-bcolor); }
+.btn-primary:hover { background: var(--btn-primary-hover-bg); color: var(--btn-primary-hover-color); }
 .btn-big { font-size: 1.4rem; padding: 16px 28px; }
 
-/* ---------- ASCII screenshot ---------- */
+/* ======================== SCREENSHOT ======================== */
 .hero-screenshot {
-  background: #000;
-  border: 4px ridge #00ff00;
+  background: var(--screenshot-bg);
+  border: var(--screenshot-border);
   padding: 10px;
   margin: 20px auto;
   max-width: 100%;
   overflow-x: auto;
 }
 .hero-screenshot pre {
-  color: #00ff00;
-  font-family: "Courier New", monospace;
+  color: var(--screenshot-color);
+  font-family: var(--font-mono);
   font-size: 12px;
   margin: 0;
   display: inline-block;
   text-align: left;
 }
 
-/* ---------- Logo wall ---------- */
+/* ======================== LOGO WALL ======================== */
 .logowall { text-align: center; }
-.logowall h2 { color: #ffff00; text-shadow: 2px 2px 0 #ff00ff; }
-.powered { color: #fff; }
+.logowall h2 { color: var(--logowall-h2-color); text-shadow: var(--logowall-h2-shadow); }
+.powered { color: var(--powered-color); }
 .badge-grid { margin: 12px auto; border-collapse: separate; border-spacing: 10px; }
 .weblogo {
   display: inline-block;
-  background: #000;
-  border: 3px outset #888;
-  color: #00ffff;
-  font-family: "Times New Roman", serif;
+  background: var(--weblogo-bg);
+  border: var(--weblogo-border);
+  color: var(--weblogo-color);
+  font-family: var(--font-heading);
   font-style: italic;
   font-weight: bold;
   padding: 8px 14px;
-  text-shadow: 1px 1px 0 #ff00ff;
+  text-shadow: var(--weblogo-shadow);
 }
 
-/* ---------- Features ---------- */
-.features h2, .method h2, .final-cta h2 { text-align: center; color: #ffff00; text-shadow: 2px 2px 0 #ff0000; }
+/* ======================== FEATURES ======================== */
+.features h2, .method h2, .final-cta h2 { text-align: center; color: var(--heading-color); text-shadow: var(--heading-shadow); }
 .feature {
   width: 100%;
-  background: #ffffcc;
-  color: #000080;
-  border: 4px ridge #ff00ff;
+  background: var(--feature-bg);
+  color: var(--feature-color);
+  border: var(--feature-border);
   margin: 16px 0;
 }
 .feature td { padding: 14px; vertical-align: middle; }
 .feature-icon { font-size: 3.5rem; text-align: center; width: 120px; }
-.feature-body h3 { margin: 0 0 6px; color: #cc0066; font-size: 1.5rem; }
-.feature-body p { margin: 0; color: #000080; }
-.feature-body em { color: #cc0066; }
+.feature-body h3 { margin: 0 0 6px; color: var(--feature-h3-color); font-size: 1.5rem; }
+.feature-body p { margin: 0; color: var(--feature-color); }
+.feature-body em { color: var(--feature-em-color); }
 
-/* ---------- Method ---------- */
+/* ======================== METHOD ======================== */
 .method {
-  background: #330066;
-  border: 4px double #ffff00;
+  background: var(--method-bg);
+  border: var(--method-border);
   padding: 16px;
-  color: #ffffff;
+  color: var(--method-color);
 }
-.method p { color: #fff; }
-.method-list { list-style: none; padding: 0; font-weight: bold; color: #00ff00; }
+.method p { color: var(--method-color); }
+.method-list { list-style: none; padding: 0; font-weight: bold; color: var(--method-list-color); }
 .method-list li { margin: 6px 0; }
 
-/* ---------- Testimonial ---------- */
+/* ======================== TESTIMONIAL ======================== */
 .testimonial { text-align: center; }
 .testimonial blockquote {
-  background: #fff;
-  color: #000080;
-  border: 4px ridge #00ffff;
+  background: var(--blockquote-bg);
+  color: var(--blockquote-color);
+  border: var(--blockquote-border);
   margin: 0 auto;
   max-width: 620px;
   padding: 20px;
   font-style: italic;
   font-size: 1.25rem;
 }
-.bigquote { font-size: 2.5rem; color: #ff00ff; }
-.testimonial blockquote footer { margin-top: 10px; font-style: normal; font-weight: bold; color: #cc0066; }
-.speed-badge { color: #ffff00; font-weight: bold; font-size: 1.3rem; text-shadow: 1px 1px 0 #ff0000; }
+.bigquote { font-size: 2.5rem; color: var(--bigquote-color); }
+.testimonial blockquote footer { margin-top: 10px; font-style: normal; font-weight: bold; color: var(--attribution-color); }
+.speed-badge { color: var(--speed-badge-color); font-weight: bold; font-size: 1.3rem; text-shadow: var(--speed-badge-shadow); }
 
-/* ---------- Final CTA ---------- */
-.final-cta { text-align: center; background: #000; border: 4px ridge #ff00ff; padding: 22px; }
-.final-cta p { color: #fff; }
-.fineprint { color: #888 !important; font-size: 0.85rem; }
+/* ======================== FINAL CTA ======================== */
+.final-cta { text-align: center; background: var(--cta-bg); border: var(--cta-border); padding: 22px; }
+.final-cta p { color: var(--cta-color); }
+.fineprint { color: var(--fineprint-color) !important; font-size: 0.85rem; }
 
-/* ---------- Footer ---------- */
-footer { background: #c0c0c0; color: #000080; border-top: 4px double #ff00ff; padding: 18px 10px; margin-top: 20px; }
+/* ======================== FOOTER ======================== */
+footer { background: var(--footer-bg); color: var(--footer-color); border-top: var(--footer-border); padding: 18px 10px; margin-top: 20px; }
 .footer-grid { margin: 0 auto; }
 .footer-grid td { vertical-align: top; padding: 0 24px; }
-.footer-grid h3 { color: #800080; margin: 0 0 6px; font-size: 1rem; }
+.footer-grid h3 { color: var(--footer-h4); margin: 0 0 6px; font-size: 1rem; }
 .footer-grid ul { list-style: none; padding: 0; margin: 0; }
-.footer-grid a { color: #000080; }
-.footer-grid a:hover { color: #ff0000; }
+.footer-grid a { color: var(--footer-a); }
+.footer-grid a:hover { color: var(--footer-a-hover); }
 
 .webring { text-align: center; margin: 16px 0; font-weight: bold; }
-.webring a { color: #0000ee; }
-.ring-label { color: #800080; margin: 0 12px; }
+.webring a { color: var(--webring-a); }
+.ring-label { color: var(--ring-label); margin: 0 12px; }
 
 .counter { text-align: center; }
 .hitcounter span {
   display: inline-block;
-  background: #000;
-  color: #00ff00;
-  font-family: "Courier New", monospace;
+  background: var(--counter-bg);
+  color: var(--counter-color);
+  font-family: var(--font-mono);
   font-weight: bold;
   padding: 3px 6px;
   margin: 0 1px;
-  border: 1px solid #00ff00;
+  border: var(--counter-border);
 }
 
-.bestviewed { text-align: center; color: #000080; font-size: 0.9rem; }
-.bestviewed a { color: #0000ee; }
+.bestviewed { text-align: center; color: var(--bestviewed-color); font-size: 0.9rem; }
+.bestviewed a { color: var(--bestviewed-a); }
 .bestviewed code { background: #fff; padding: 0 4px; }
 
-/* ---------- Hero "new feature" pill ---------- */
+/* ======================== NEW-FEATURE PILL ======================== */
 .new-feature {
   margin: 8px 0 0;
   font-weight: bold;
 }
 .new-feature a {
-  color: #00ffff;
-  background: #000;
-  border: 2px outset #888;
+  color: var(--pill-color);
+  background: var(--pill-bg);
+  border: var(--pill-border);
   padding: 4px 10px;
   text-decoration: none;
-  text-shadow: 1px 1px 0 #ff00ff;
+  text-shadow: var(--pill-shadow);
 }
-.new-feature a:hover { background: #ffff00; color: #ff0000; }
+.new-feature a:hover { background: var(--pill-hover-bg); color: var(--pill-hover-color); }
 
-/* ---------- "New species" statement ---------- */
+/* ======================== STATEMENT ======================== */
 .statement {
-  background: #ffffcc;
-  color: #000080;
-  border: 4px ridge #00ffff;
+  background: var(--statement-bg);
+  color: var(--statement-color);
+  border: var(--statement-border);
   padding: 18px;
   text-align: center;
 }
 .statement h2 {
   margin: 0;
   font-size: 1.4rem;
-  color: #000080;
+  color: var(--statement-h2-color);
   text-shadow: none;
 }
-.statement strong { color: #cc0066; }
+.statement strong { color: var(--statement-strong-color); }
 
-/* ---------- Numbered product sections (1.0 - 5.0) ---------- */
+/* ======================== NUMBERED SECTIONS ======================== */
 .numbered {
-  background: #330066;
-  border: 4px double #ffff00;
+  background: var(--numbered-bg);
+  border: var(--numbered-border);
   padding: 16px;
-  color: #ffffff;
+  color: var(--numbered-color);
   text-align: center;
 }
 .section-num {
-  font-family: "Courier New", monospace;
+  font-family: var(--font-mono);
   font-weight: bold;
-  color: #00ff00;
+  color: var(--section-num-color);
   letter-spacing: 2px;
   margin: 0 0 4px;
 }
 .numbered h2 {
   margin: 0 0 8px;
-  color: #ffff00 !important;
-  text-shadow: 2px 2px 0 #ff0000 !important;
+  color: var(--numbered-h2-color) !important;
+  text-shadow: var(--numbered-h2-shadow) !important;
 }
 .section-desc {
-  color: #fff;
+  color: var(--numbered-color);
   max-width: 640px;
   margin: 0 auto 12px;
 }
@@ -362,57 +946,60 @@ footer { background: #c0c0c0; color: #000080; border-top: 4px double #ff00ff; pa
   flex-direction: column;
   gap: 8px;
 }
-/* Native <details> accordion = accessible, JS-free "Tech specs" panel */
+
+/* ======================== INGREDIENT ACCORDION ======================== */
 .ingredient {
-  border: 2px outset #fff;
-  background: linear-gradient(#fff, #d4d0c8);
+  border: var(--ingredient-border);
+  background: var(--ingredient-bg);
 }
 .ingredient > summary {
   cursor: pointer;
   list-style: none;
   padding: 6px 10px;
-  color: #000080;
-  font-family: "Courier New", monospace;
+  color: var(--ingredient-sum-color);
+  font-family: var(--font-mono);
   font-weight: bold;
   font-size: 0.95rem;
 }
 .ingredient > summary::-webkit-details-marker { display: none; }
 .ingredient > summary::before {
   content: "[+] ";
-  color: #cc0066;
+  color: var(--ingredient-marker-color);
 }
 .ingredient[open] > summary::before { content: "[\2212] "; }
-.ingredient > summary:hover { background: #ffff00; color: #ff0000; }
+.ingredient > summary:hover { background: var(--ingredient-hover-bg); color: var(--ingredient-hover-color); }
 .ingredient[open] > summary {
-  background: #000080;
-  color: #ffff00;
-  border-bottom: 2px solid #ff00ff;
+  background: var(--ingredient-open-bg);
+  color: var(--ingredient-open-color);
+  border-bottom: var(--ingredient-open-border);
 }
+
+/* ======================== SPEC PANEL ======================== */
 .spec {
-  background: #ffffff;
-  color: #000080;
+  background: var(--spec-bg);
+  color: var(--spec-color);
   padding: 12px 14px;
 }
 .spec h3 {
   margin: 12px 0 4px;
-  color: #cc0066;
-  font-family: "Times New Roman", serif;
+  color: var(--spec-h3-color);
+  font-family: var(--font-heading);
 }
-.spec p { margin: 0 0 8px; color: #000080; }
-.spec-stub { color: #aa0000 !important; font-weight: bold; }
+.spec p { margin: 0 0 8px; color: var(--spec-color); }
+.spec-stub { color: var(--spec-stub-color) !important; font-weight: bold; }
 .spec-tag {
   display: inline-block;
-  background: #000;
-  color: #00ff00;
-  font-family: "Courier New", monospace;
+  background: var(--spec-tag-bg);
+  color: var(--spec-tag-color);
+  font-family: var(--font-mono);
   font-weight: bold;
   padding: 2px 8px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 .spec-figure {
-  background: #ffffcc;
-  border: 2px ridge #00ffff;
+  background: var(--spec-fig-bg);
+  border: var(--spec-fig-border);
   padding: 8px;
   font-size: 0.9rem;
 }
@@ -422,24 +1009,303 @@ footer { background: #c0c0c0; color: #000080; border-top: 4px double #ff00ff; pa
   margin-top: 4px;
 }
 .spec-table th, .spec-table td {
-  border: 1px solid #000080;
+  border: var(--spec-tbl-border);
   padding: 4px 8px;
   text-align: left;
   font-size: 0.9rem;
 }
 .spec-table th {
-  background: #000080;
-  color: #ffff00;
-  font-family: "Courier New", monospace;
+  background: var(--spec-th-bg);
+  color: var(--spec-th-color);
+  font-family: var(--font-mono);
 }
-.spec-table td:first-child { font-weight: bold; background: #ffffcc; }
+.spec-table td:first-child { font-weight: bold; background: var(--spec-td-bg); }
 
-/* ---------- Multiple testimonials ---------- */
-.testimonial h2 { color: #ffff00; text-shadow: 2px 2px 0 #ff00ff; }
+/* ======================== EXTRA TESTIMONIAL HEADING ======================== */
+.testimonial h2 { color: var(--testimonial-h2-color); text-shadow: var(--testimonial-h2-shadow); }
 .testimonial blockquote { margin: 0 auto 16px; }
 
+/* ======================== THEME TOGGLE ======================== */
+#theme-toggle {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: bold;
+  line-height: 1;
+  background: var(--btn-bg);
+  border: var(--btn-border);
+  color: var(--btn-color);
+}
+#theme-toggle:hover {
+  background: var(--btn-hover-bg);
+  color: var(--btn-hover-color);
+}
+
 /* ============================================================
-   ACCESSIBILITY: respect reduced motion (the "bonus points")
+   WIN8 / METRO STRUCTURAL OVERRIDES
+   Beyond token swaps: Metro restructures the layout into
+   edge-to-edge color blocks, a Live Tile grid, and a bold
+   light-weight typographic hierarchy. CSS-only, so the HTML
+   stays shared between both themes.
+   ============================================================ */
+
+/* ---- Typography: light-weight Segoe UI hierarchy ---- */
+[data-theme="win8"] h1,
+[data-theme="win8"] h2,
+[data-theme="win8"] h3,
+[data-theme="win8"] h4 { font-weight: 300; letter-spacing: -0.5px; }
+
+/* ---- Edge-to-edge: drop the centered column; blocks bleed to edges ---- */
+[data-theme="win8"] main { max-width: none; margin: 0; padding: 0; }
+[data-theme="win8"] section { margin: 0; padding: 56px 8%; }
+
+/* Metro has no decorative dividers; the rainbow text becomes flat white */
+[data-theme="win8"] .rainbow-hr { display: none; }
+[data-theme="win8"] .rainbow { -webkit-text-fill-color: #ffffff; color: #ffffff; }
+
+/* ---- Strip the 90s clutter Metro doesn't do: ---- */
+/* the under-construction banner, all flashing (blink) elements, and the
+   decorative emoji/icon glyphs (wrapped as .emoji in the markup). */
+[data-theme="win8"] .construction,
+[data-theme="win8"] .blink,
+[data-theme="win8"] .logo-orb,
+[data-theme="win8"] .feature-icon,
+[data-theme="win8"] .bigquote,
+[data-theme="win8"] .emoji { display: none; }
+
+/* ---- Header / nav: chrome-less, left-aligned app-bar tiles ---- */
+[data-theme="win8"] header { padding: 18px 8%; }
+[data-theme="win8"] .wordmark { letter-spacing: -1px; }
+[data-theme="win8"] .navlist { justify-content: flex-start; }
+[data-theme="win8"] .navlist a { font-weight: 400; }
+
+/* ---- Hero: massive, left-aligned, light-weight title ---- */
+[data-theme="win8"] .hero { text-align: left; padding-top: 40px; padding-bottom: 40px; }
+[data-theme="win8"] .hero h1 {
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  font-weight: 200;
+  line-height: 1.04;
+  margin: 0 0 18px;
+  max-width: 16ch;
+}
+[data-theme="win8"] .hero-sub { margin: 0 0 24px; font-size: 1.35rem; font-weight: 300; max-width: 620px; }
+[data-theme="win8"] .cta-row { justify-content: flex-start; }
+[data-theme="win8"] .hero-screenshot { margin-left: 0; }
+
+/* ---- Live Tile grid: feature cards become bold flat tiles ---- */
+[data-theme="win8"] .features { display: flex; flex-wrap: wrap; gap: 10px; }
+[data-theme="win8"] .features h2 { flex-basis: 100%; text-align: left; }
+[data-theme="win8"] .feature {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 300px;
+  max-width: 100%;
+  margin: 0;
+  padding: 24px;
+  box-sizing: border-box;
+}
+[data-theme="win8"] .feature tbody,
+[data-theme="win8"] .feature tr { display: contents; }
+[data-theme="win8"] .feature td { display: block; padding: 0; }
+[data-theme="win8"] .feature-icon { width: auto; text-align: left; font-size: 3rem; margin-bottom: auto; }
+[data-theme="win8"] .feature-body h3 { color: #fff; font-size: 1.7rem; font-weight: 300; margin: 14px 0 8px; }
+[data-theme="win8"] .feature-body p { color: rgba(255,255,255,.9); }
+[data-theme="win8"] .feature:nth-of-type(1) { background: #00aba9; } /* teal   */
+[data-theme="win8"] .feature:nth-of-type(2) { background: #fa6800; } /* orange */
+[data-theme="win8"] .feature:nth-of-type(3) { background: #60a917; } /* lime   */
+
+/* ---- Logo wall: small colored Live Tiles ---- */
+[data-theme="win8"] .logowall { text-align: left; }
+[data-theme="win8"] .badge-grid { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 0; border-spacing: 0; }
+[data-theme="win8"] .badge-grid tbody,
+[data-theme="win8"] .badge-grid tr { display: contents; }
+[data-theme="win8"] .badge-grid td { display: block; padding: 0; }
+[data-theme="win8"] .weblogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 90px;
+  max-width: 100%;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+[data-theme="win8"] .badge-grid td:nth-of-type(1) .weblogo { background: #0050ef; } /* cobalt */
+[data-theme="win8"] .badge-grid td:nth-of-type(2) .weblogo { background: #e51400; } /* red    */
+[data-theme="win8"] .badge-grid td:nth-of-type(3) .weblogo { background: #00aba9; } /* teal   */
+[data-theme="win8"] .badge-grid td:nth-of-type(4) .weblogo { background: #f0a30a; } /* amber  */
+
+/* ---- Statement: flat cobalt block, left-aligned big light type ---- */
+[data-theme="win8"] .statement { text-align: left; }
+[data-theme="win8"] .statement h2 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 200; line-height: 1.2; max-width: 26ch; }
+
+/* ---- Numbered sections: panoramic colored hubs ---- */
+[data-theme="win8"] .numbered { text-align: left; }
+[data-theme="win8"] .section-num {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+[data-theme="win8"] .numbered h2 { font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 200; line-height: 1.05; margin-bottom: 18px; }
+[data-theme="win8"] .section-desc { margin: 0 0 16px; font-size: 1.2rem; font-weight: 300; max-width: 60ch; }
+[data-theme="win8"] #intake  { background: #00aba9; } /* teal    */
+[data-theme="win8"] #plan    { background: #0050ef; } /* cobalt  */
+[data-theme="win8"] #build   { background: #6a00ff; } /* indigo  */
+[data-theme="win8"] #diffs   { background: #d80073; } /* magenta */
+[data-theme="win8"] #monitor { background: #008a00; } /* emerald */
+
+/* ---- Ingredient accordion: flat translucent rows ---- */
+[data-theme="win8"] .ingredients { margin: 0; }
+[data-theme="win8"] .ingredient > summary { font-family: var(--font-body); font-weight: 400; }
+
+/* ---- Changelog: left-aligned flat block ---- */
+[data-theme="win8"] .method { text-align: left; }
+[data-theme="win8"] .method h2 { text-align: left; }
+[data-theme="win8"] .method-list { font-weight: 300; }
+
+/* ---- Testimonials: flat tiles with accent rule ---- */
+[data-theme="win8"] .testimonial { text-align: left; }
+[data-theme="win8"] .testimonial h2 { text-align: left; }
+[data-theme="win8"] .testimonial blockquote {
+  max-width: none;
+  border-left: 6px solid #1ba1e2;
+  font-style: normal;
+  font-weight: 300;
+}
+
+/* ---- Final CTA: flat green block, left-aligned ---- */
+[data-theme="win8"] .final-cta { text-align: left; }
+[data-theme="win8"] .final-cta h2 { font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 200; text-align: left; }
+[data-theme="win8"] .final-cta .cta-row { justify-content: flex-start; }
+/* Primary button is green; on the green CTA block it needs to invert to stay visible */
+[data-theme="win8"] .final-cta .btn-primary { background: #ffffff; color: #60a917; border-color: #ffffff; }
+[data-theme="win8"] .final-cta .btn-primary:hover { background: rgba(255,255,255,.85); color: #60a917; }
+
+/* ---- Footer ---- */
+[data-theme="win8"] footer { padding: 48px 8%; }
+[data-theme="win8"] .footer-grid h3 { font-weight: 400; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; }
+
+/* ---- Theme toggle: a small flat accent tile ---- */
+[data-theme="win8"] #theme-toggle { background: #1ba1e2; border: 0; color: #fff; }
+[data-theme="win8"] #theme-toggle:hover { background: #fff; color: #1ba1e2; }
+
+/* ---- Flat active states — no 3D inset borders ---- */
+[data-theme="win8"] .btn99:active,
+[data-theme="win8"] #theme-toggle:active { border-style: solid; }
+[data-theme="win8"] .navlist a:active { border-style: solid; }
+
+/* ============================================================
+   APPLE 2005 STRUCTURAL OVERRIDES
+   Beyond token swaps: the Apple Store look needs rounded white
+   cards with hairline borders and soft shadows, glossy aqua pill
+   buttons, a brushed-silver tab bar, and the 90s clutter stripped
+   away (no construction banner, marquee, blink, or emoji glyphs).
+   CSS-only, so the HTML stays shared across all three themes.
+   ============================================================ */
+
+/* ---- Strip the GeoCities clutter Apple never had ---- */
+[data-theme="apple"] .construction,
+[data-theme="apple"] .topbar,
+[data-theme="apple"] .blink,
+[data-theme="apple"] .logo-orb,
+[data-theme="apple"] .feature-icon,
+[data-theme="apple"] .bigquote,
+[data-theme="apple"] .emoji { display: none; }
+
+/* No rainbow rules; headlines become a solid color */
+[data-theme="apple"] .rainbow-hr { display: none; }
+[data-theme="apple"] .rainbow { -webkit-text-fill-color: #1a1a1a; color: #1a1a1a; }
+
+/* ---- Typography: tighter Lucida Grande headings ---- */
+[data-theme="apple"] h1,
+[data-theme="apple"] h2,
+[data-theme="apple"] h3,
+[data-theme="apple"] h4 { letter-spacing: -0.02em; }
+[data-theme="apple"] body { font-size: 13px; line-height: 1.55; }
+
+/* ---- Header: brushed-silver tab bar ---- */
+[data-theme="apple"] header { padding: 6px 12px; }
+[data-theme="apple"] .wordmark { font-weight: bold; }
+[data-theme="apple"] .navlist { gap: 1px; justify-content: center; margin-top: 6px; }
+[data-theme="apple"] .navlist a {
+  border-radius: 5px 5px 0 0;
+  padding: 6px 12px;
+  font-weight: normal;
+}
+[data-theme="apple"] .nav-cta a { border-radius: 12px; padding: 6px 16px; }
+
+/* ---- Glossy aqua pill buttons ---- */
+[data-theme="apple"] .btn99 {
+  border-radius: 16px;
+  padding: 8px 20px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.7);
+}
+[data-theme="apple"] .btn-primary {
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.55), 0 1px 2px rgba(0,0,0,.2);
+}
+[data-theme="apple"] .btn-big { border-radius: 22px; }
+
+/* ---- Hero: a soft Aqua promo panel ---- */
+[data-theme="apple"] .hero {
+  background: linear-gradient(#ffffff, #eef5fc);
+  border: 1px solid #d4e2f0;
+  border-radius: 10px;
+  padding: 34px 24px;
+  margin-top: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+[data-theme="apple"] .hero h1 { font-weight: bold; font-size: 2.4rem; }
+[data-theme="apple"] .hero-screenshot { border-radius: 8px; }
+
+/* ---- Rounded white cards with hairline borders + soft shadow ---- */
+[data-theme="apple"] .feature,
+[data-theme="apple"] .statement,
+[data-theme="apple"] .numbered,
+[data-theme="apple"] .method,
+[data-theme="apple"] .final-cta,
+[data-theme="apple"] .testimonial blockquote,
+[data-theme="apple"] .weblogo,
+[data-theme="apple"] .spec,
+[data-theme="apple"] .ingredient {
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+[data-theme="apple"] .ingredient { overflow: hidden; }
+[data-theme="apple"] .spec-tag { border-radius: 9px; }
+
+/* ---- Section headings: understated, no glow ---- */
+[data-theme="apple"] .numbered h2,
+[data-theme="apple"] .features h2,
+[data-theme="apple"] .final-cta h2 { font-weight: bold; }
+[data-theme="apple"] .section-num { letter-spacing: 1px; text-transform: uppercase; font-size: 0.75rem; }
+
+/* ---- Footer: rounded silver bar ---- */
+[data-theme="apple"] footer { border-radius: 10px 10px 0 0; }
+
+/* ---- Theme toggle: a glossy aqua pill ---- */
+[data-theme="apple"] #theme-toggle {
+  background: var(--btn-primary-bg);
+  border: 1px solid #2f6db5;
+  color: #fff;
+  border-radius: 14px;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.55), 0 1px 2px rgba(0,0,0,.2);
+}
+[data-theme="apple"] #theme-toggle:hover { background: var(--btn-primary-hover-bg); color: #fff; }
+
+/* ============================================================
+   ACCESSIBILITY: respect reduced motion
    Kills blink + scrolling marquees + hue shifts for anyone who
    asked their OS to reduce motion.
    ============================================================ */
@@ -453,7 +1319,7 @@ footer { background: #c0c0c0; color: #000080; border-top: 4px double #ff00ff; pa
   .marquee { transform: none; }
 }
 
-/* ---------- Mobile-ish reflow (90s sites never did this, but a11y) ---------- */
+/* ======================== MOBILE ======================== */
 @media (max-width: 640px) {
   .hero h1 { font-size: 1.8rem; }
   .feature-icon { width: auto; font-size: 2.5rem; }
