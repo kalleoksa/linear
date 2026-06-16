@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css" />
   <!-- Restore saved theme before first paint to avoid flash -->
   <script>
-    (function(){var t=localStorage.getItem('linear-theme');if(t==='win8'||t==='geocities'||t==='apple')document.documentElement.setAttribute('data-theme',t);})();
+    (function(){var t=localStorage.getItem('linear-theme');if(t==='win8'||t==='geocities'||t==='apple'||t==='zine')document.documentElement.setAttribute('data-theme',t);})();
   </script>
 </head>
 <body>
@@ -423,15 +423,15 @@
     </p>
   </footer>
 
-  <!-- Theme switch button — cycles GeoCities → Win8 → Apple -->
+  <!-- Theme switch button — cycles GeoCities → Win8 → Apple → Zine -->
   <button id="theme-toggle" aria-label="Switch visual theme">Switch to Win8</button>
 
   <script>
     (function () {
       var html = document.documentElement;
       var btn = document.getElementById('theme-toggle');
-      var order = ['geocities', 'win8', 'apple'];
-      var names = { geocities: 'GeoCities', win8: 'Win8', apple: 'Apple' };
+      var order = ['geocities', 'win8', 'apple', 'zine'];
+      var names = { geocities: 'GeoCities', win8: 'Win8', apple: 'Apple', zine: 'Zine' };
 
       function current() {
         var t = html.getAttribute('data-theme');
