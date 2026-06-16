@@ -1,424 +1,38 @@
 /* ============================================================
-   RETRO LINEAR (tm) — Multi-theme stylesheet
-   Theme 1: GeoCities  (data-theme="geocities", default)
-   Theme 2: Windows 8  (data-theme="win8")
-   Switch by toggling data-theme on <html>; the toggle button
-   in the corner persists the choice to localStorage.
+   RETRO LINEAR (tm) - GeoCities Edition stylesheet
+   Keep Linear's content. Ruin Linear's aesthetic.
    ============================================================ */
 
-/* ======================== THEME: GeoCities (default) ======================== */
-:root {
-  /* Page */
-  --bg:       #000080;
-  --fg:       #ffff00;
-  --bg-image: radial-gradient(white 1px, transparent 1.5px),
-              radial-gradient(#00ffff 1px, transparent 1.5px);
-  --bg-size:  40px 40px, 70px 70px;
-  --bg-pos:   0 0, 20px 35px;
-  --font-body:    "Comic Sans MS","Comic Sans","Chalkboard SE",cursive,sans-serif;
-  --font-heading: "Times New Roman",Times,serif;
-  --font-mono:    "Courier New",monospace;
-
-  /* Accessibility */
-  --skip-bg:       #ffff00;
-  --skip-color:    #000;
-  --skip-border:   3px solid #ff0000;
-  --focus-outline: 4px dashed #00ff00;
-
-  /* Blink */
-  --blink-hot: #ff0000;
-
-  /* Topbar / marquee */
-  --topbar-bg:     #000;
-  --topbar-border: 3px ridge #00ff00;
-  --marquee-color: #00ff00;
-
-  /* Construction bar */
-  --construction-stripe:  repeating-linear-gradient(45deg, #ffcc00 0 18px, #000 18px 36px);
-  --construction-text-bg: #ffcc00;
-  --construction-color:   #000;
-  --construction-shadow:  0 0 2px #fff, 0 0 2px #fff;
-
-  /* Header */
-  --header-bg:       #c0c0c0;
-  --header-border:   4px double #ff00ff;
-  --wordmark-color:  #800080;
-  --wordmark-shadow: 2px 2px 0 #ff00ff, 4px 4px 0 #00ffff;
-  --tagline-color:   #000080;
-
-  /* Nav */
-  --nav-btn-bg:          linear-gradient(#fff, #d4d0c8);
-  --nav-btn-border:      2px outset #fff;
-  --nav-btn-color:       #000080;
-  --nav-btn-hover-bg:    #ffff00;
-  --nav-btn-hover-color: #ff0000;
-  --nav-cta-bg:          linear-gradient(#ff66cc, #cc0066);
-  --nav-cta-color:       #fff;
-  --nav-cta-bcolor:      #ff99dd;
-  --nav-cta-hover-bg:    #ffff00;
-  --nav-cta-hover-color: #cc0066;
-
-  /* Section headings */
-  --heading-color:  #ffff00;
-  --heading-shadow: 2px 2px 0 #ff0000;
-
-  /* Hero */
-  --hero-sub-color: #ffffff;
-  --hero-em-color:  #00ff00;
-
-  /* Buttons */
-  --btn-bg:                  linear-gradient(#f4f4f4, #c0c0c0);
-  --btn-border:              3px outset #ffffff;
-  --btn-color:               #000080;
-  --btn-hover-bg:            #ffff00;
-  --btn-hover-color:         #ff0000;
-  --btn-primary-bg:          linear-gradient(#66ff66, #009900);
-  --btn-primary-color:       #000;
-  --btn-primary-bcolor:      #ccffcc;
-  --btn-primary-hover-bg:    #ffff00;
-  --btn-primary-hover-color: #cc0000;
-
-  /* Screenshot */
-  --screenshot-bg:     #000;
-  --screenshot-border: 4px ridge #00ff00;
-  --screenshot-color:  #00ff00;
-
-  /* Logo wall */
-  --logowall-h2-color:  #ffff00;
-  --logowall-h2-shadow: 2px 2px 0 #ff00ff;
-  --powered-color:      #fff;
-  --weblogo-bg:         #000;
-  --weblogo-border:     3px outset #888;
-  --weblogo-color:      #00ffff;
-  --weblogo-shadow:     1px 1px 0 #ff00ff;
-
-  /* Feature cards */
-  --feature-bg:       #ffffcc;
-  --feature-color:    #000080;
-  --feature-border:   4px ridge #ff00ff;
-  --feature-h3-color: #cc0066;
-  --feature-em-color: #cc0066;
-
-  /* Method section */
-  --method-bg:         #330066;
-  --method-border:     4px double #ffff00;
-  --method-color:      #ffffff;
-  --method-list-color: #00ff00;
-
-  /* Statement */
-  --statement-bg:           #ffffcc;
-  --statement-color:        #000080;
-  --statement-border:       4px ridge #00ffff;
-  --statement-h2-color:     #000080;
-  --statement-strong-color: #cc0066;
-
-  /* Numbered sections */
-  --numbered-bg:        #330066;
-  --numbered-border:    4px double #ffff00;
-  --numbered-color:     #ffffff;
-  --section-num-color:  #00ff00;
-  --numbered-h2-color:  #ffff00;
-  --numbered-h2-shadow: 2px 2px 0 #ff0000;
-
-  /* Ingredient accordion */
-  --ingredient-bg:           linear-gradient(#fff, #d4d0c8);
-  --ingredient-border:       2px outset #fff;
-  --ingredient-sum-color:    #000080;
-  --ingredient-marker-color: #cc0066;
-  --ingredient-hover-bg:     #ffff00;
-  --ingredient-hover-color:  #ff0000;
-  --ingredient-open-bg:      #000080;
-  --ingredient-open-color:   #ffff00;
-  --ingredient-open-border:  2px solid #ff00ff;
-
-  /* Spec panel */
-  --spec-bg:        #ffffff;
-  --spec-color:     #000080;
-  --spec-h3-color:  #cc0066;
-  --spec-stub-color:#aa0000;
-  --spec-tag-bg:    #000;
-  --spec-tag-color: #00ff00;
-  --spec-fig-bg:    #ffffcc;
-  --spec-fig-border:2px ridge #00ffff;
-  --spec-tbl-border:1px solid #000080;
-  --spec-th-bg:     #000080;
-  --spec-th-color:  #ffff00;
-  --spec-td-bg:     #ffffcc;
-
-  /* Testimonials */
-  --testimonial-h2-color:  #ffff00;
-  --testimonial-h2-shadow: 2px 2px 0 #ff00ff;
-  --blockquote-bg:         #fff;
-  --blockquote-color:      #000080;
-  --blockquote-border:     4px ridge #00ffff;
-  --bigquote-color:        #ff00ff;
-  --attribution-color:     #cc0066;
-  --speed-badge-color:     #ffff00;
-  --speed-badge-shadow:    1px 1px 0 #ff0000;
-
-  /* Final CTA */
-  --cta-bg:          #000;
-  --cta-border:      4px ridge #ff00ff;
-  --cta-color:       #fff;
-  --fineprint-color: #888;
-
-  /* Footer */
-  --footer-bg:      #c0c0c0;
-  --footer-color:   #000080;
-  --footer-border:  4px double #ff00ff;
-  --footer-h4:      #800080;
-  --footer-a:       #000080;
-  --footer-a-hover: #ff0000;
-
-  /* Webring */
-  --webring-a:  #0000ee;
-  --ring-label: #800080;
-
-  /* Hit counter */
-  --counter-bg:     #000;
-  --counter-color:  #00ff00;
-  --counter-border: 1px solid #00ff00;
-
-  /* Best-viewed note */
-  --bestviewed-color: #000080;
-  --bestviewed-a:     #0000ee;
-
-  /* New-feature pill */
-  --pill-bg:          #000;
-  --pill-color:       #00ffff;
-  --pill-border:      2px outset #888;
-  --pill-shadow:      1px 1px 0 #ff00ff;
-  --pill-hover-bg:    #ffff00;
-  --pill-hover-color: #ff0000;
-
-  /* Rainbow gradient (text + hr) */
-  --rainbow-gradient: linear-gradient(90deg,#ff0000,#ff9900,#ffff00,#00ff00,#00ffff,#0000ff,#ff00ff);
-  --rainbow-hr-size:  200% 100%;
-}
-
-
-/* ======================== THEME: Windows 8 / Metro ========================
-   Authentic Metro: a deep-purple Start-screen canvas, bright flat Live
-   Tiles, edge-to-edge color blocks, no chrome (no borders/shadows/
-   gradients), and a bold light-weight Segoe UI typographic hierarchy.
-   Token values live here; structural layout lives in the WIN8 / METRO
-   STRUCTURAL OVERRIDES block further down.
-   =========================================================================== */
-[data-theme="win8"] {
-  /* Page — deep purple Start screen */
-  --bg:       #3b0d4d;
-  --fg:       #ffffff;
-  --bg-image: none;
-  --bg-size:  auto;
-  --bg-pos:   0 0;
-  --font-body:    "Segoe UI","Segoe UI Web (West European)",-apple-system,"Helvetica Neue",Arial,sans-serif;
-  --font-heading: "Segoe UI Light","Segoe UI Semilight","Segoe UI",-apple-system,"Helvetica Neue",Arial,sans-serif;
-  --font-mono:    "Consolas","Courier New",monospace;
-
-  /* Accessibility */
-  --skip-bg:       #1ba1e2;
-  --skip-color:    #fff;
-  --skip-border:   0;
-  --focus-outline: 3px solid #ffffff;
-
-  /* Blink */
-  --blink-hot: #e51400;
-
-  /* Topbar / marquee */
-  --topbar-bg:     #2b0838;
-  --topbar-border: none;
-  --marquee-color: #1ba1e2;
-
-  /* Construction bar — flat amber, no caution stripes */
-  --construction-stripe:  #fa6800;
-  --construction-text-bg: transparent;
-  --construction-color:   #ffffff;
-  --construction-shadow:  none;
-
-  /* Header — chrome-less */
-  --header-bg:       transparent;
-  --header-border:   none;
-  --wordmark-color:  #ffffff;
-  --wordmark-shadow: none;
-  --tagline-color:   rgba(255,255,255,.6);
-
-  /* Nav — app-bar style outline tiles + one solid accent CTA */
-  --nav-btn-bg:          transparent;
-  --nav-btn-border:      2px solid rgba(255,255,255,.5);
-  --nav-btn-color:       #ffffff;
-  --nav-btn-hover-bg:    #ffffff;
-  --nav-btn-hover-color: #3b0d4d;
-  --nav-cta-bg:          #1ba1e2;
-  --nav-cta-color:       #ffffff;
-  --nav-cta-bcolor:      #1ba1e2;
-  --nav-cta-hover-bg:    #ffffff;
-  --nav-cta-hover-color: #1ba1e2;
-
-  /* Section headings */
-  --heading-color:  #ffffff;
-  --heading-shadow: none;
-
-  /* Hero */
-  --hero-sub-color: rgba(255,255,255,.75);
-  --hero-em-color:  #1ba1e2;
-
-  /* Buttons — Metro outline (default) + solid accent (primary) */
-  --btn-bg:                  transparent;
-  --btn-border:              2px solid #ffffff;
-  --btn-color:               #ffffff;
-  --btn-hover-bg:            #ffffff;
-  --btn-hover-color:         #3b0d4d;
-  --btn-primary-bg:          #60a917;
-  --btn-primary-color:       #ffffff;
-  --btn-primary-bcolor:      #60a917;
-  --btn-primary-hover-bg:    #76b822;
-  --btn-primary-hover-color: #ffffff;
-
-  /* Screenshot */
-  --screenshot-bg:     #000000;
-  --screenshot-border: 0;
-  --screenshot-color:  #1ba1e2;
-
-  /* Logo wall (tinted per-tile in the override block) */
-  --logowall-h2-color:  #ffffff;
-  --logowall-h2-shadow: none;
-  --powered-color:      rgba(255,255,255,.75);
-  --weblogo-bg:         #0050ef;
-  --weblogo-border:     0;
-  --weblogo-color:      #ffffff;
-  --weblogo-shadow:     none;
-
-  /* Feature Live Tiles (colored per-tile in the override block) */
-  --feature-bg:       #00aba9;
-  --feature-color:    #ffffff;
-  --feature-border:   0;
-  --feature-h3-color: #ffffff;
-  --feature-em-color: #ffffff;
-
-  /* Changelog block */
-  --method-bg:         #2d7d9a;
-  --method-border:     0;
-  --method-color:      #ffffff;
-  --method-list-color: #ffffff;
-
-  /* Statement — flat cobalt block */
-  --statement-bg:           #0050ef;
-  --statement-color:        #ffffff;
-  --statement-border:       0;
-  --statement-h2-color:     #ffffff;
-  --statement-strong-color: #ffffff;
-
-  /* Numbered hubs (colored per-section by id in the override block) */
-  --numbered-bg:        #00aba9;
-  --numbered-border:    0;
-  --numbered-color:     #ffffff;
-  --section-num-color:  rgba(255,255,255,.7);
-  --numbered-h2-color:  #ffffff;
-  --numbered-h2-shadow: none;
-
-  /* Ingredient accordion — translucent tiles on the colored hubs */
-  --ingredient-bg:           rgba(255,255,255,.14);
-  --ingredient-border:       0;
-  --ingredient-sum-color:    #ffffff;
-  --ingredient-marker-color: #ffffff;
-  --ingredient-hover-bg:     rgba(255,255,255,.28);
-  --ingredient-hover-color:  #ffffff;
-  --ingredient-open-bg:      #ffffff;
-  --ingredient-open-color:   #1f1f1f;
-  --ingredient-open-border:  0;
-
-  /* Spec panel — light card for readability */
-  --spec-bg:        #ffffff;
-  --spec-color:     #1f1f1f;
-  --spec-h3-color:  #0050ef;
-  --spec-stub-color:#e51400;
-  --spec-tag-bg:    #0050ef;
-  --spec-tag-color: #ffffff;
-  --spec-fig-bg:    #f2f2f2;
-  --spec-fig-border:0;
-  --spec-tbl-border:1px solid #dddddd;
-  --spec-th-bg:     #0050ef;
-  --spec-th-color:  #ffffff;
-  --spec-td-bg:     #f2f2f2;
-
-  /* Testimonials */
-  --testimonial-h2-color:  #ffffff;
-  --testimonial-h2-shadow: none;
-  --blockquote-bg:         #2b0838;
-  --blockquote-color:      #ffffff;
-  --blockquote-border:     0;
-  --bigquote-color:        #1ba1e2;
-  --attribution-color:     #1ba1e2;
-  --speed-badge-color:     #fa6800;
-  --speed-badge-shadow:    none;
-
-  /* Final CTA — flat green block */
-  --cta-bg:          #60a917;
-  --cta-border:      0;
-  --cta-color:       #ffffff;
-  --fineprint-color: rgba(255,255,255,.65);
-
-  /* Footer */
-  --footer-bg:      #2b0838;
-  --footer-color:   #ffffff;
-  --footer-border:  none;
-  --footer-h4:      #1ba1e2;
-  --footer-a:       rgba(255,255,255,.75);
-  --footer-a-hover: #1ba1e2;
-
-  /* Webring */
-  --webring-a:  #1ba1e2;
-  --ring-label: #fa6800;
-
-  /* Hit counter */
-  --counter-bg:     #000000;
-  --counter-color:  #1ba1e2;
-  --counter-border: 0;
-
-  /* Best-viewed note */
-  --bestviewed-color: rgba(255,255,255,.65);
-  --bestviewed-a:     #1ba1e2;
-
-  /* New-feature pill — flat amber */
-  --pill-bg:          #fa6800;
-  --pill-color:       #ffffff;
-  --pill-border:      0;
-  --pill-shadow:      none;
-  --pill-hover-bg:    #ffffff;
-  --pill-hover-color: #fa6800;
-
-  /* Rainbow → flat white (Metro has no rainbow); hr hidden in overrides */
-  --rainbow-gradient: #ffffff;
-  --rainbow-hr-size:  100% 100%;
-}
-
-/* ======================== BASE ======================== */
+/* ---------- Base / the crime scene ---------- */
 html { overflow-x: hidden; }
 
 body {
   margin: 0;
-  font-family: var(--font-body);
-  color: var(--fg);
-  background-color: var(--bg);
-  background-image: var(--bg-image);
-  background-size: var(--bg-size);
-  background-position: var(--bg-pos);
+  font-family: "Comic Sans MS", "Comic Sans", "Chalkboard SE", cursive, sans-serif;
+  color: #ffff00;                 /* hazard yellow text */
+  background-color: #000080;      /* classic navy */
+  /* Tiled "starfield" made of pure CSS - no external images, works offline */
+  background-image:
+    radial-gradient(white 1px, transparent 1.5px),
+    radial-gradient(#00ffff 1px, transparent 1.5px);
+  background-size: 40px 40px, 70px 70px;
+  background-position: 0 0, 20px 35px;
   font-size: 17px;
   line-height: 1.5;
-  overflow-x: hidden;
+  overflow-x: hidden;            /* no horizontal scroll on mobile */
 }
 
-/* ======================== ACCESSIBILITY ======================== */
+/* ---------- Accessibility helpers ---------- */
 .skip-link {
   position: absolute;
   left: -9999px;
   top: 0;
-  background: var(--skip-bg);
-  color: var(--skip-color);
+  background: #ffff00;
+  color: #000;
   padding: 8px 14px;
   font-weight: bold;
   z-index: 999;
-  border: var(--skip-border);
+  border: 3px solid #ff0000;
 }
 .skip-link:focus { left: 8px; top: 8px; }
 
@@ -432,27 +46,27 @@ body {
 
 a:focus-visible,
 .btn99:focus-visible {
-  outline: var(--focus-outline);
+  outline: 4px dashed #00ff00;
   outline-offset: 2px;
 }
 
-/* ======================== BLINK ======================== */
+/* ---------- BLINK (tamed for a11y) ---------- */
 .blink { animation: blink 1s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
-.blink.hot { color: var(--blink-hot); font-weight: bold; }
+.blink.hot { color: #ff0000; font-weight: bold; }
 
-/* ======================== TOPBAR / MARQUEE ======================== */
+/* ---------- Marquees (CSS, so reduced-motion can stop them) ---------- */
 .topbar {
-  background: var(--topbar-bg);
-  border-top: var(--topbar-border);
-  border-bottom: var(--topbar-border);
+  background: #000;
+  border-top: 3px ridge #00ff00;
+  border-bottom: 3px ridge #00ff00;
   overflow: hidden;
   white-space: nowrap;
 }
 .marquee {
   display: inline-flex;
   white-space: nowrap;
-  color: var(--marquee-color);
+  color: #00ff00;
   font-weight: bold;
   padding: 4px 0;
   animation: scrollLeft 30s linear infinite;
@@ -463,25 +77,25 @@ a:focus-visible,
   to   { transform: translateX(-50%); }
 }
 
-/* ======================== CONSTRUCTION BAR ======================== */
+/* ---------- Under construction ---------- */
 .construction {
-  background: var(--construction-stripe);
-  color: var(--construction-color);
+  background: repeating-linear-gradient(45deg, #ffcc00 0 18px, #000 18px 36px);
+  color: #000;
   text-align: center;
   padding: 6px;
   font-weight: bold;
-  text-shadow: var(--construction-shadow);
+  text-shadow: 0 0 2px #fff, 0 0 2px #fff;
 }
 .construction-text {
-  background: var(--construction-text-bg);
+  background: #ffcc00;
   padding: 2px 8px;
   display: inline-block;
 }
 
-/* ======================== HEADER / NAV ======================== */
+/* ---------- Header / logo bar / nav ---------- */
 header {
-  background: var(--header-bg);
-  border-bottom: var(--header-border);
+  background: #c0c0c0;            /* win95 silver */
+  border-bottom: 4px double #ff00ff;
   padding: 8px;
 }
 .logobar { width: 100%; }
@@ -490,13 +104,13 @@ header {
 .wordmark {
   font-size: 2rem;
   font-weight: bold;
-  color: var(--wordmark-color);
-  text-shadow: var(--wordmark-shadow);
+  color: #800080;
+  text-shadow: 2px 2px 0 #ff00ff, 4px 4px 0 #00ffff;
   vertical-align: middle;
 }
 .tagline-cell {
   text-align: right;
-  color: var(--tagline-color);
+  color: #000080;
   font-style: italic;
 }
 
@@ -511,27 +125,27 @@ header {
 }
 .navlist a {
   display: block;
-  background: var(--nav-btn-bg);
-  border: var(--nav-btn-border);
-  color: var(--nav-btn-color);
+  background: linear-gradient(#fff, #d4d0c8);
+  border: 2px outset #fff;
+  color: #000080;
   padding: 4px 10px;
   text-decoration: none;
   font-weight: bold;
 }
-.navlist a:hover { background: var(--nav-btn-hover-bg); color: var(--nav-btn-hover-color); }
+.navlist a:hover { background: #ffff00; color: #ff0000; }
 .navlist a:active { border-style: inset; }
-.nav-cta a { background: var(--nav-cta-bg); color: var(--nav-cta-color); border-color: var(--nav-cta-bcolor); }
-.nav-cta a:hover { background: var(--nav-cta-hover-bg); color: var(--nav-cta-hover-color); }
+.nav-cta a { background: linear-gradient(#ff66cc, #cc0066); color: #fff; border-color: #ff99dd; }
+.nav-cta a:hover { background: #ffff00; color: #cc0066; }
 
-/* ======================== LAYOUT ======================== */
+/* ---------- Layout ---------- */
 main { max-width: 900px; margin: 0 auto; padding: 0 10px; }
 section { margin: 24px 0; }
 
-h1, h2, h3, h4 { font-family: var(--font-heading); }
+h1, h2, h3, h4 { font-family: "Times New Roman", Times, serif; }
 
-/* ======================== RAINBOW ======================== */
+/* ---------- Rainbow text + dividers ---------- */
 .rainbow {
-  background: var(--rainbow-gradient);
+  background: linear-gradient(90deg,#ff0000,#ff9900,#ffff00,#00ff00,#00ffff,#0000ff,#ff00ff);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -541,202 +155,202 @@ h1, h2, h3, h4 { font-family: var(--font-heading); }
   height: 8px;
   border: 0;
   margin: 18px 0;
-  background: var(--rainbow-gradient);
-  background-size: var(--rainbow-hr-size);
+  background: linear-gradient(90deg,#ff0000,#ff9900,#ffff00,#00ff00,#00ffff,#0000ff,#ff00ff,#ff0000);
+  background-size: 200% 100%;
   animation: hueShift 6s linear infinite;
 }
 @keyframes hueShift { to { background-position: 200% 0; } }
 
-/* ======================== HERO ======================== */
+/* ---------- Hero ---------- */
 .hero { text-align: center; }
 .hero h1 { font-size: 2.6rem; margin: 18px 0 6px; }
-.hero-sub { font-size: 1.2rem; color: var(--hero-sub-color); max-width: 640px; margin: 0 auto 16px; }
-.hero-sub em { color: var(--hero-em-color); font-weight: bold; }
+.hero-sub { font-size: 1.2rem; color: #ffffff; max-width: 640px; margin: 0 auto 16px; }
+.hero-sub em { color: #00ff00; font-weight: bold; }
 
 .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 16px 0; }
 
 .btn99 {
   display: inline-block;
-  background: var(--btn-bg);
-  border: var(--btn-border);
-  color: var(--btn-color);
+  background: linear-gradient(#f4f4f4, #c0c0c0);
+  border: 3px outset #ffffff;
+  color: #000080;
   padding: 10px 18px;
-  font-family: var(--font-body);
+  font-family: "Comic Sans MS", cursive, sans-serif;
   font-weight: bold;
   font-size: 1.05rem;
   text-decoration: none;
   cursor: pointer;
 }
-.btn99:hover { background: var(--btn-hover-bg); color: var(--btn-hover-color); }
+.btn99:hover { background: #ffff00; color: #ff0000; }
 .btn99:active { border-style: inset; }
-.btn-primary { background: var(--btn-primary-bg); color: var(--btn-primary-color); border-color: var(--btn-primary-bcolor); }
-.btn-primary:hover { background: var(--btn-primary-hover-bg); color: var(--btn-primary-hover-color); }
+.btn-primary { background: linear-gradient(#66ff66, #009900); color: #000; border-color: #ccffcc; }
+.btn-primary:hover { background: #ffff00; color: #cc0000; }
 .btn-big { font-size: 1.4rem; padding: 16px 28px; }
 
-/* ======================== SCREENSHOT ======================== */
+/* ---------- ASCII screenshot ---------- */
 .hero-screenshot {
-  background: var(--screenshot-bg);
-  border: var(--screenshot-border);
+  background: #000;
+  border: 4px ridge #00ff00;
   padding: 10px;
   margin: 20px auto;
   max-width: 100%;
   overflow-x: auto;
 }
 .hero-screenshot pre {
-  color: var(--screenshot-color);
-  font-family: var(--font-mono);
+  color: #00ff00;
+  font-family: "Courier New", monospace;
   font-size: 12px;
   margin: 0;
   display: inline-block;
   text-align: left;
 }
 
-/* ======================== LOGO WALL ======================== */
+/* ---------- Logo wall ---------- */
 .logowall { text-align: center; }
-.logowall h2 { color: var(--logowall-h2-color); text-shadow: var(--logowall-h2-shadow); }
-.powered { color: var(--powered-color); }
+.logowall h2 { color: #ffff00; text-shadow: 2px 2px 0 #ff00ff; }
+.powered { color: #fff; }
 .badge-grid { margin: 12px auto; border-collapse: separate; border-spacing: 10px; }
 .weblogo {
   display: inline-block;
-  background: var(--weblogo-bg);
-  border: var(--weblogo-border);
-  color: var(--weblogo-color);
-  font-family: var(--font-heading);
+  background: #000;
+  border: 3px outset #888;
+  color: #00ffff;
+  font-family: "Times New Roman", serif;
   font-style: italic;
   font-weight: bold;
   padding: 8px 14px;
-  text-shadow: var(--weblogo-shadow);
+  text-shadow: 1px 1px 0 #ff00ff;
 }
 
-/* ======================== FEATURES ======================== */
-.features h2, .method h2, .final-cta h2 { text-align: center; color: var(--heading-color); text-shadow: var(--heading-shadow); }
+/* ---------- Features ---------- */
+.features h2, .method h2, .final-cta h2 { text-align: center; color: #ffff00; text-shadow: 2px 2px 0 #ff0000; }
 .feature {
   width: 100%;
-  background: var(--feature-bg);
-  color: var(--feature-color);
-  border: var(--feature-border);
+  background: #ffffcc;
+  color: #000080;
+  border: 4px ridge #ff00ff;
   margin: 16px 0;
 }
 .feature td { padding: 14px; vertical-align: middle; }
 .feature-icon { font-size: 3.5rem; text-align: center; width: 120px; }
-.feature-body h3 { margin: 0 0 6px; color: var(--feature-h3-color); font-size: 1.5rem; }
-.feature-body p { margin: 0; color: var(--feature-color); }
-.feature-body em { color: var(--feature-em-color); }
+.feature-body h3 { margin: 0 0 6px; color: #cc0066; font-size: 1.5rem; }
+.feature-body p { margin: 0; color: #000080; }
+.feature-body em { color: #cc0066; }
 
-/* ======================== METHOD ======================== */
+/* ---------- Method ---------- */
 .method {
-  background: var(--method-bg);
-  border: var(--method-border);
+  background: #330066;
+  border: 4px double #ffff00;
   padding: 16px;
-  color: var(--method-color);
+  color: #ffffff;
 }
-.method p { color: var(--method-color); }
-.method-list { list-style: none; padding: 0; font-weight: bold; color: var(--method-list-color); }
+.method p { color: #fff; }
+.method-list { list-style: none; padding: 0; font-weight: bold; color: #00ff00; }
 .method-list li { margin: 6px 0; }
 
-/* ======================== TESTIMONIAL ======================== */
+/* ---------- Testimonial ---------- */
 .testimonial { text-align: center; }
 .testimonial blockquote {
-  background: var(--blockquote-bg);
-  color: var(--blockquote-color);
-  border: var(--blockquote-border);
+  background: #fff;
+  color: #000080;
+  border: 4px ridge #00ffff;
   margin: 0 auto;
   max-width: 620px;
   padding: 20px;
   font-style: italic;
   font-size: 1.25rem;
 }
-.bigquote { font-size: 2.5rem; color: var(--bigquote-color); }
-.testimonial blockquote footer { margin-top: 10px; font-style: normal; font-weight: bold; color: var(--attribution-color); }
-.speed-badge { color: var(--speed-badge-color); font-weight: bold; font-size: 1.3rem; text-shadow: var(--speed-badge-shadow); }
+.bigquote { font-size: 2.5rem; color: #ff00ff; }
+.testimonial blockquote footer { margin-top: 10px; font-style: normal; font-weight: bold; color: #cc0066; }
+.speed-badge { color: #ffff00; font-weight: bold; font-size: 1.3rem; text-shadow: 1px 1px 0 #ff0000; }
 
-/* ======================== FINAL CTA ======================== */
-.final-cta { text-align: center; background: var(--cta-bg); border: var(--cta-border); padding: 22px; }
-.final-cta p { color: var(--cta-color); }
-.fineprint { color: var(--fineprint-color) !important; font-size: 0.85rem; }
+/* ---------- Final CTA ---------- */
+.final-cta { text-align: center; background: #000; border: 4px ridge #ff00ff; padding: 22px; }
+.final-cta p { color: #fff; }
+.fineprint { color: #888 !important; font-size: 0.85rem; }
 
-/* ======================== FOOTER ======================== */
-footer { background: var(--footer-bg); color: var(--footer-color); border-top: var(--footer-border); padding: 18px 10px; margin-top: 20px; }
+/* ---------- Footer ---------- */
+footer { background: #c0c0c0; color: #000080; border-top: 4px double #ff00ff; padding: 18px 10px; margin-top: 20px; }
 .footer-grid { margin: 0 auto; }
 .footer-grid td { vertical-align: top; padding: 0 24px; }
-.footer-grid h4 { color: var(--footer-h4); margin: 0 0 6px; }
+.footer-grid h3 { color: #800080; margin: 0 0 6px; font-size: 1rem; }
 .footer-grid ul { list-style: none; padding: 0; margin: 0; }
-.footer-grid a { color: var(--footer-a); }
-.footer-grid a:hover { color: var(--footer-a-hover); }
+.footer-grid a { color: #000080; }
+.footer-grid a:hover { color: #ff0000; }
 
 .webring { text-align: center; margin: 16px 0; font-weight: bold; }
-.webring a { color: var(--webring-a); }
-.ring-label { color: var(--ring-label); margin: 0 12px; }
+.webring a { color: #0000ee; }
+.ring-label { color: #800080; margin: 0 12px; }
 
 .counter { text-align: center; }
 .hitcounter span {
   display: inline-block;
-  background: var(--counter-bg);
-  color: var(--counter-color);
-  font-family: var(--font-mono);
+  background: #000;
+  color: #00ff00;
+  font-family: "Courier New", monospace;
   font-weight: bold;
   padding: 3px 6px;
   margin: 0 1px;
-  border: var(--counter-border);
+  border: 1px solid #00ff00;
 }
 
-.bestviewed { text-align: center; color: var(--bestviewed-color); font-size: 0.9rem; }
-.bestviewed a { color: var(--bestviewed-a); }
+.bestviewed { text-align: center; color: #000080; font-size: 0.9rem; }
+.bestviewed a { color: #0000ee; }
 .bestviewed code { background: #fff; padding: 0 4px; }
 
-/* ======================== NEW-FEATURE PILL ======================== */
+/* ---------- Hero "new feature" pill ---------- */
 .new-feature {
   margin: 8px 0 0;
   font-weight: bold;
 }
 .new-feature a {
-  color: var(--pill-color);
-  background: var(--pill-bg);
-  border: var(--pill-border);
+  color: #00ffff;
+  background: #000;
+  border: 2px outset #888;
   padding: 4px 10px;
   text-decoration: none;
-  text-shadow: var(--pill-shadow);
+  text-shadow: 1px 1px 0 #ff00ff;
 }
-.new-feature a:hover { background: var(--pill-hover-bg); color: var(--pill-hover-color); }
+.new-feature a:hover { background: #ffff00; color: #ff0000; }
 
-/* ======================== STATEMENT ======================== */
+/* ---------- "New species" statement ---------- */
 .statement {
-  background: var(--statement-bg);
-  color: var(--statement-color);
-  border: var(--statement-border);
+  background: #ffffcc;
+  color: #000080;
+  border: 4px ridge #00ffff;
   padding: 18px;
   text-align: center;
 }
 .statement h2 {
   margin: 0;
   font-size: 1.4rem;
-  color: var(--statement-h2-color);
+  color: #000080;
   text-shadow: none;
 }
-.statement strong { color: var(--statement-strong-color); }
+.statement strong { color: #cc0066; }
 
-/* ======================== NUMBERED SECTIONS ======================== */
+/* ---------- Numbered product sections (1.0 - 5.0) ---------- */
 .numbered {
-  background: var(--numbered-bg);
-  border: var(--numbered-border);
+  background: #330066;
+  border: 4px double #ffff00;
   padding: 16px;
-  color: var(--numbered-color);
+  color: #ffffff;
   text-align: center;
 }
 .section-num {
-  font-family: var(--font-mono);
+  font-family: "Courier New", monospace;
   font-weight: bold;
-  color: var(--section-num-color);
+  color: #00ff00;
   letter-spacing: 2px;
   margin: 0 0 4px;
 }
 .numbered h2 {
   margin: 0 0 8px;
-  color: var(--numbered-h2-color) !important;
-  text-shadow: var(--numbered-h2-shadow) !important;
+  color: #ffff00 !important;
+  text-shadow: 2px 2px 0 #ff0000 !important;
 }
 .section-desc {
-  color: var(--numbered-color);
+  color: #fff;
   max-width: 640px;
   margin: 0 auto 12px;
 }
@@ -748,60 +362,57 @@ footer { background: var(--footer-bg); color: var(--footer-color); border-top: v
   flex-direction: column;
   gap: 8px;
 }
-
-/* ======================== INGREDIENT ACCORDION ======================== */
+/* Native <details> accordion = accessible, JS-free "Tech specs" panel */
 .ingredient {
-  border: var(--ingredient-border);
-  background: var(--ingredient-bg);
+  border: 2px outset #fff;
+  background: linear-gradient(#fff, #d4d0c8);
 }
 .ingredient > summary {
   cursor: pointer;
   list-style: none;
   padding: 6px 10px;
-  color: var(--ingredient-sum-color);
-  font-family: var(--font-mono);
+  color: #000080;
+  font-family: "Courier New", monospace;
   font-weight: bold;
   font-size: 0.95rem;
 }
 .ingredient > summary::-webkit-details-marker { display: none; }
 .ingredient > summary::before {
   content: "[+] ";
-  color: var(--ingredient-marker-color);
+  color: #cc0066;
 }
 .ingredient[open] > summary::before { content: "[\2212] "; }
-.ingredient > summary:hover { background: var(--ingredient-hover-bg); color: var(--ingredient-hover-color); }
+.ingredient > summary:hover { background: #ffff00; color: #ff0000; }
 .ingredient[open] > summary {
-  background: var(--ingredient-open-bg);
-  color: var(--ingredient-open-color);
-  border-bottom: var(--ingredient-open-border);
+  background: #000080;
+  color: #ffff00;
+  border-bottom: 2px solid #ff00ff;
 }
-
-/* ======================== SPEC PANEL ======================== */
 .spec {
-  background: var(--spec-bg);
-  color: var(--spec-color);
+  background: #ffffff;
+  color: #000080;
   padding: 12px 14px;
 }
 .spec h3 {
   margin: 12px 0 4px;
-  color: var(--spec-h3-color);
-  font-family: var(--font-heading);
+  color: #cc0066;
+  font-family: "Times New Roman", serif;
 }
-.spec p { margin: 0 0 8px; color: var(--spec-color); }
-.spec-stub { color: var(--spec-stub-color) !important; font-weight: bold; }
+.spec p { margin: 0 0 8px; color: #000080; }
+.spec-stub { color: #aa0000 !important; font-weight: bold; }
 .spec-tag {
   display: inline-block;
-  background: var(--spec-tag-bg);
-  color: var(--spec-tag-color);
-  font-family: var(--font-mono);
+  background: #000;
+  color: #00ff00;
+  font-family: "Courier New", monospace;
   font-weight: bold;
   padding: 2px 8px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 .spec-figure {
-  background: var(--spec-fig-bg);
-  border: var(--spec-fig-border);
+  background: #ffffcc;
+  border: 2px ridge #00ffff;
   padding: 8px;
   font-size: 0.9rem;
 }
@@ -811,202 +422,24 @@ footer { background: var(--footer-bg); color: var(--footer-color); border-top: v
   margin-top: 4px;
 }
 .spec-table th, .spec-table td {
-  border: var(--spec-tbl-border);
+  border: 1px solid #000080;
   padding: 4px 8px;
   text-align: left;
   font-size: 0.9rem;
 }
 .spec-table th {
-  background: var(--spec-th-bg);
-  color: var(--spec-th-color);
-  font-family: var(--font-mono);
+  background: #000080;
+  color: #ffff00;
+  font-family: "Courier New", monospace;
 }
-.spec-table td:first-child { font-weight: bold; background: var(--spec-td-bg); }
+.spec-table td:first-child { font-weight: bold; background: #ffffcc; }
 
-/* ======================== EXTRA TESTIMONIAL HEADING ======================== */
-.testimonial h2 { color: var(--testimonial-h2-color); text-shadow: var(--testimonial-h2-shadow); }
+/* ---------- Multiple testimonials ---------- */
+.testimonial h2 { color: #ffff00; text-shadow: 2px 2px 0 #ff00ff; }
 .testimonial blockquote { margin: 0 auto 16px; }
 
-/* ======================== THEME TOGGLE ======================== */
-#theme-toggle {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  z-index: 1000;
-  padding: 8px 14px;
-  cursor: pointer;
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: bold;
-  line-height: 1;
-  background: var(--btn-bg);
-  border: var(--btn-border);
-  color: var(--btn-color);
-}
-#theme-toggle:hover {
-  background: var(--btn-hover-bg);
-  color: var(--btn-hover-color);
-}
-
 /* ============================================================
-   WIN8 / METRO STRUCTURAL OVERRIDES
-   Beyond token swaps: Metro restructures the layout into
-   edge-to-edge color blocks, a Live Tile grid, and a bold
-   light-weight typographic hierarchy. CSS-only, so the HTML
-   stays shared between both themes.
-   ============================================================ */
-
-/* ---- Typography: light-weight Segoe UI hierarchy ---- */
-[data-theme="win8"] h1,
-[data-theme="win8"] h2,
-[data-theme="win8"] h3,
-[data-theme="win8"] h4 { font-weight: 300; letter-spacing: -0.5px; }
-
-/* ---- Edge-to-edge: drop the centered column; blocks bleed to edges ---- */
-[data-theme="win8"] main { max-width: none; margin: 0; padding: 0; }
-[data-theme="win8"] section { margin: 0; padding: 56px 8%; }
-
-/* Metro has no decorative dividers; the rainbow text becomes flat white */
-[data-theme="win8"] .rainbow-hr { display: none; }
-[data-theme="win8"] .rainbow { -webkit-text-fill-color: #ffffff; color: #ffffff; }
-
-/* ---- Strip the 90s clutter Metro doesn't do: ---- */
-/* the under-construction banner, all flashing (blink) elements, and the
-   decorative emoji/icon glyphs (wrapped as .emoji in the markup). */
-[data-theme="win8"] .construction,
-[data-theme="win8"] .blink,
-[data-theme="win8"] .logo-orb,
-[data-theme="win8"] .feature-icon,
-[data-theme="win8"] .bigquote,
-[data-theme="win8"] .emoji { display: none; }
-
-/* ---- Header / nav: chrome-less, left-aligned app-bar tiles ---- */
-[data-theme="win8"] header { padding: 18px 8%; }
-[data-theme="win8"] .wordmark { letter-spacing: -1px; }
-[data-theme="win8"] .navlist { justify-content: flex-start; }
-[data-theme="win8"] .navlist a { font-weight: 400; }
-
-/* ---- Hero: massive, left-aligned, light-weight title ---- */
-[data-theme="win8"] .hero { text-align: left; padding-top: 40px; padding-bottom: 40px; }
-[data-theme="win8"] .hero h1 {
-  font-size: clamp(2.6rem, 7vw, 5rem);
-  font-weight: 200;
-  line-height: 1.04;
-  margin: 0 0 18px;
-  max-width: 16ch;
-}
-[data-theme="win8"] .hero-sub { margin: 0 0 24px; font-size: 1.35rem; font-weight: 300; max-width: 620px; }
-[data-theme="win8"] .cta-row { justify-content: flex-start; }
-[data-theme="win8"] .hero-screenshot { margin-left: 0; }
-
-/* ---- Live Tile grid: feature cards become bold flat tiles ---- */
-[data-theme="win8"] .features { display: flex; flex-wrap: wrap; gap: 10px; }
-[data-theme="win8"] .features h2 { flex-basis: 100%; text-align: left; }
-[data-theme="win8"] .feature {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  height: 300px;
-  max-width: 100%;
-  margin: 0;
-  padding: 24px;
-  box-sizing: border-box;
-}
-[data-theme="win8"] .feature tbody,
-[data-theme="win8"] .feature tr { display: contents; }
-[data-theme="win8"] .feature td { display: block; padding: 0; }
-[data-theme="win8"] .feature-icon { width: auto; text-align: left; font-size: 3rem; margin-bottom: auto; }
-[data-theme="win8"] .feature-body h3 { color: #fff; font-size: 1.7rem; font-weight: 300; margin: 14px 0 8px; }
-[data-theme="win8"] .feature-body p { color: rgba(255,255,255,.9); }
-[data-theme="win8"] .feature:nth-of-type(1) { background: #00aba9; } /* teal   */
-[data-theme="win8"] .feature:nth-of-type(2) { background: #fa6800; } /* orange */
-[data-theme="win8"] .feature:nth-of-type(3) { background: #60a917; } /* lime   */
-
-/* ---- Logo wall: small colored Live Tiles ---- */
-[data-theme="win8"] .logowall { text-align: left; }
-[data-theme="win8"] .badge-grid { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 0; border-spacing: 0; }
-[data-theme="win8"] .badge-grid tbody,
-[data-theme="win8"] .badge-grid tr { display: contents; }
-[data-theme="win8"] .badge-grid td { display: block; padding: 0; }
-[data-theme="win8"] .weblogo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 160px;
-  height: 90px;
-  max-width: 100%;
-  font-family: var(--font-body);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.1rem;
-}
-[data-theme="win8"] .badge-grid td:nth-of-type(1) .weblogo { background: #0050ef; } /* cobalt */
-[data-theme="win8"] .badge-grid td:nth-of-type(2) .weblogo { background: #e51400; } /* red    */
-[data-theme="win8"] .badge-grid td:nth-of-type(3) .weblogo { background: #00aba9; } /* teal   */
-[data-theme="win8"] .badge-grid td:nth-of-type(4) .weblogo { background: #f0a30a; } /* amber  */
-
-/* ---- Statement: flat cobalt block, left-aligned big light type ---- */
-[data-theme="win8"] .statement { text-align: left; }
-[data-theme="win8"] .statement h2 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 200; line-height: 1.2; max-width: 26ch; }
-
-/* ---- Numbered sections: panoramic colored hubs ---- */
-[data-theme="win8"] .numbered { text-align: left; }
-[data-theme="win8"] .section-num {
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-[data-theme="win8"] .numbered h2 { font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 200; line-height: 1.05; margin-bottom: 18px; }
-[data-theme="win8"] .section-desc { margin: 0 0 16px; font-size: 1.2rem; font-weight: 300; max-width: 60ch; }
-[data-theme="win8"] #intake  { background: #00aba9; } /* teal    */
-[data-theme="win8"] #plan    { background: #0050ef; } /* cobalt  */
-[data-theme="win8"] #build   { background: #6a00ff; } /* indigo  */
-[data-theme="win8"] #diffs   { background: #d80073; } /* magenta */
-[data-theme="win8"] #monitor { background: #008a00; } /* emerald */
-
-/* ---- Ingredient accordion: flat translucent rows ---- */
-[data-theme="win8"] .ingredients { margin: 0; }
-[data-theme="win8"] .ingredient > summary { font-family: var(--font-body); font-weight: 400; }
-
-/* ---- Changelog: left-aligned flat block ---- */
-[data-theme="win8"] .method { text-align: left; }
-[data-theme="win8"] .method h2 { text-align: left; }
-[data-theme="win8"] .method-list { font-weight: 300; }
-
-/* ---- Testimonials: flat tiles with accent rule ---- */
-[data-theme="win8"] .testimonial { text-align: left; }
-[data-theme="win8"] .testimonial h2 { text-align: left; }
-[data-theme="win8"] .testimonial blockquote {
-  max-width: none;
-  border-left: 6px solid #1ba1e2;
-  font-style: normal;
-  font-weight: 300;
-}
-
-/* ---- Final CTA: flat green block, left-aligned ---- */
-[data-theme="win8"] .final-cta { text-align: left; }
-[data-theme="win8"] .final-cta h2 { font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 200; text-align: left; }
-[data-theme="win8"] .final-cta .cta-row { justify-content: flex-start; }
-/* Primary button is green; on the green CTA block it needs to invert to stay visible */
-[data-theme="win8"] .final-cta .btn-primary { background: #ffffff; color: #60a917; border-color: #ffffff; }
-[data-theme="win8"] .final-cta .btn-primary:hover { background: rgba(255,255,255,.85); color: #60a917; }
-
-/* ---- Footer ---- */
-[data-theme="win8"] footer { padding: 48px 8%; }
-[data-theme="win8"] .footer-grid h4 { font-weight: 400; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; }
-
-/* ---- Theme toggle: a small flat accent tile ---- */
-[data-theme="win8"] #theme-toggle { background: #1ba1e2; border: 0; color: #fff; }
-[data-theme="win8"] #theme-toggle:hover { background: #fff; color: #1ba1e2; }
-
-/* ---- Flat active states — no 3D inset borders ---- */
-[data-theme="win8"] .btn99:active,
-[data-theme="win8"] #theme-toggle:active { border-style: solid; }
-[data-theme="win8"] .navlist a:active { border-style: solid; }
-
-/* ============================================================
-   ACCESSIBILITY: respect reduced motion
+   ACCESSIBILITY: respect reduced motion (the "bonus points")
    Kills blink + scrolling marquees + hue shifts for anyone who
    asked their OS to reduce motion.
    ============================================================ */
@@ -1020,7 +453,7 @@ footer { background: var(--footer-bg); color: var(--footer-color); border-top: v
   .marquee { transform: none; }
 }
 
-/* ======================== MOBILE ======================== */
+/* ---------- Mobile-ish reflow (90s sites never did this, but a11y) ---------- */
 @media (max-width: 640px) {
   .hero h1 { font-size: 1.8rem; }
   .feature-icon { width: auto; font-size: 2.5rem; }
